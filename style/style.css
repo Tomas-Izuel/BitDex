@@ -658,7 +658,7 @@ input[type=number] {
 }
 
 .contentAbout{
-    margin: 1rem 20rem;
+    margin: 3rem 10vw;
 }
 
 .work{
@@ -750,17 +750,14 @@ input[type=number] {
     }
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 991px){
     .header{
         justify-content: center;
     }
 
-    .LogIn{
-        display: none;
-    }
-
     .navBarItemLink{
         flex-direction: row;
+        gap: 1rem;
     }
 
     .navBarItemIcon{
@@ -775,7 +772,9 @@ input[type=number] {
         background-image: url("../media/BTCBackVertical.png");
         background-position: center;
     }
+}
 
+@media screen and (max-width: 768px){
     .title{
         font-size: 2rem;
     }
@@ -862,6 +861,9 @@ input[type=number] {
 }
 
 @media screen and (max-width: 480px){
+    .LogIn{
+        display: none;
+    }
 
     .title{
         font-size: 1.5rem;
