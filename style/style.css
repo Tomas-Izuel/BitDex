@@ -861,9 +861,6 @@ input[type=number] {
 }
 
 @media screen and (max-width: 480px){
-    .LogIn{
-        display: none;
-    }
 
     .title{
         font-size: 1.5rem;
