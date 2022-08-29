@@ -1,0 +1,851 @@
+/*Settings iniciales*/
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+$negro: #0e0b16;
+$rosa: #a239ca;
+$azul: #4717f6;
+$link: #b03cdf;
+$blanco: #ffffff;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Lexend", sans-serif;
+  background-color: $negro;
+  color: $blanco;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: $blanco;
+}
+
+.btn {
+  color: $blanco !important;
+}
+
+.btn-primary {
+  background-color: $rosa;
+  border: none;
+  padding: 0.5rem;
+  transition: all 0.5s;
+}
+
+.btn-primary:hover {
+  background-color: $link;
+  transform: translateY(-0.2rem);
+}
+
+.btn-primary:focus {
+  background-color: $link;
+  border: none;
+  outline: none;
+}
+
+.btn-secondary {
+  padding: 0.5rem;
+  border: none;
+  background-color: gray;
+  transition: all 0.5s;
+}
+
+.btn-secondary:hover {
+  background-color: rgb(150, 150, 150);
+  transform: translateY(-0.2rem);
+}
+
+p {
+  /*reseteando estilo de boostrap*/
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  font-size: 4rem;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+/*Navbar*/
+.navbar {
+  border-radius: 0 0 3rem 0;
+  position: fixed;
+  padding: 1rem 1.5rem 1.5rem 1rem;
+  width: 100vw;
+  z-index: 1;
+}
+
+.container-fluid {
+  gap: 1rem;
+}
+
+.navbar-nav {
+  gap: 0.8rem;
+}
+
+.navbar-brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  object {
+    width: 2rem;
+  }
+  p {
+    font-size: 1.5rem;
+  }
+}
+
+.nav-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  transition: all 0.5s;
+  ion-icon {
+    font-size: 1.5rem;
+    opacity: 0;
+    transition: all 0.5s;
+    transform: translateX(-5rem);
+  }
+}
+
+.nav-link:hover {
+  color: $link;
+  font-weight: 500;
+  ion-icon {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.active {
+  color: $rosa;
+  fill: $rosa;
+  object {
+    color: $rosa;
+    fill: $rosa;
+  }
+  p {
+    color: $rosa;
+  }
+  ion-icon {
+    opacity: 1;
+    transform: translateX(0);
+    color: $rosa;
+  }
+}
+
+.navbar-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .navbar-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/*footer*/
+footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: #261e3c;
+  padding: 2rem;
+  justify-content: center;
+}
+
+.credits {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.credits a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.credits a svg {
+  width: 3em;
+  height: 3em;
+  fill: gray;
+  transition: all 0.5s;
+}
+
+.credits a p {
+  color: gray;
+  transition: all 0.5s;
+}
+
+.credits a:hover svg {
+  fill: $blanco;
+}
+
+.credits a:hover p {
+  color: $blanco;
+}
+
+.community {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.communityLogos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.communityLogos a {
+  color: gray;
+  transition: all 0.5s;
+}
+
+.communityLogos a:hover {
+  color: $blanco;
+}
+
+.license {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.license p {
+  color: gray;
+}
+
+/*Register y Login*/
+
+.mainLoginRegister {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  width: 100%;
+  height: 100vh;
+}
+
+.formLoginRegister {
+  width: 30rem;
+  height: auto;
+  background-color: #261e3c;
+  color: var(--negro);
+  border-radius: 2rem;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.formLoginRegister label {
+  background-color: #1e1830;
+  width: 80%;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formLoginRegister label .icon {
+  width: 50%;
+  height: 100%;
+  color: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #171324;
+}
+
+.formLoginRegister label .icon ion-icon {
+  font-size: 1.5rem;
+}
+
+.formLoginRegister label input {
+  width: 150%;
+  height: 100%;
+  color: gray;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1f1a30;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  transition: all 0.5s;
+}
+
+.formLoginRegister label:hover input {
+  background-color: #161222;
+  -webkit-appearance: none;
+}
+
+.formLoginRegister input:focus {
+  background-color: #161222;
+  border: none;
+  outline: 0;
+}
+/*Eliminar los botones de cambiar numero en el imput number*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.formLoginRegister button {
+  width: 70%;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.formLoginRegister button ion-icon {
+  font-size: 2rem;
+}
+
+.formLoginRegister a {
+  color: var(--rosa);
+  text-decoration: none;
+}
+
+.formLoginRegister a:hover {
+  text-decoration: underline;
+}
+
+.ilustracion {
+  width: 40rem;
+}
+
+/*Index*/
+.header {
+  position: relative;
+  text-align: center;
+}
+
+.inner-header {
+  height: 65vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.flex {
+  /*Flexbox for containers*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.waves {
+  position: relative;
+  width: 100%;
+  height: 15vh;
+  margin-bottom: -7px; /*Fix for safari gap*/
+  min-height: 100px;
+  max-height: 150px;
+}
+
+.content {
+  position: relative;
+  height: 20vh;
+  text-align: center;
+  background-color: white;
+}
+
+/* Animacion wave */
+
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+
+.inner-header {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  padding-left: 20vw;
+  h1 {
+    word-wrap: break-word;
+  }
+}
+
+.moneda {
+  position: absolute;
+}
+
+.BTC,
+.ETH,
+.TT,
+.SOL,
+.NFT {
+  opacity: 0;
+  margin-left: 0.6rem;
+}
+
+.tcash {
+  background: -webkit-linear-gradient($link, $rosa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.BTC {
+  animation: BTC 20s infinite;
+  color: #f7931a;
+}
+
+.ETH {
+  animation: ETH 20s infinite;
+  color: #a7a7a7;
+}
+
+.TT {
+  animation: TT 20s infinite;
+  color: #50af95;
+}
+
+.SOL {
+  animation: SOL 20s infinite;
+  color: #03e1ff;
+}
+
+.NFT {
+  animation: NFT 20s infinite;
+  color: $azul;
+}
+
+.dataIndex {
+  background-color: $blanco;
+  color: $link;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  padding-bottom: 4rem;
+}
+
+/*Criptos*/
+.mainCripto {
+  .headerNft {
+    background-image: url("../media/layered-waves-haikei.svg");
+    background-position: center;
+  }
+}
+
+/*NFT*/
+.headerNft {
+  width: 100%;
+  height: 60vh;
+  background-image: url("../media/cool-background.png");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bodyNft {
+  background-color: $blanco;
+  color: $negro;
+  width: 80vw;
+  margin: 0 auto;
+  position: relative;
+  transform: translateY(-5rem);
+  padding: 3rem;
+  border-radius: 2rem;
+  box-shadow: 0.9px 1.1px 3.6px rgba(0, 0, 0, 0.105),
+    2.4px 3px 10px rgba(0, 0, 0, 0.15), 5.7px 7.2px 24.1px rgba(0, 0, 0, 0.195),
+    19px 24px 80px rgba(0, 0, 0, 0.3);
+  h2 {
+    margin: 2rem 0;
+  }
+  .coleccionesNft {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  .collapseCriptos {
+    width: 100%;
+    .accordion-item {
+      box-shadow: 12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+        100px 100px 80px rgba(0, 0, 0, 0.07);
+      img {
+        width: 4rem;
+        border-radius: 50%;
+      }
+      .accordion-img {
+        width: 60%;
+        border-radius: 0;
+      }
+    }
+  }
+}
+
+/*Blog*/
+.mainBlog {
+  .headerNft {
+    background-image: url("../media/blurry-gradient-haikei.svg");
+    background-position: center;
+  }
+}
+
+.post {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.cardPost {
+  width: 40rem;
+  display: grid;
+  color: $negro;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 2fr 1fr;
+  grid-template-areas:
+    "pic text"
+    "pic p";
+  gap: 1rem;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.06), 0px 0px 80px rgba(0, 0, 0, 0.12);
+  border-radius: 2rem;
+  padding: 1rem;
+  transition: all 0.5s;
+  img {
+    grid-area: pic;
+    border-radius: 2rem;
+    width: 15rem;
+    height: 10rem;
+  }
+  h4 {
+    grid-area: text;
+  }
+  p {
+    grid-area: p;
+  }
+}
+
+.cardPost:hover {
+  color: $link;
+}
+
+/*Informacion*/
+.mainInfo {
+  .headerNft {
+    background-image: url("../media/blob-haikei.svg");
+    background-position: center;
+  }
+}
+
+/*Keyframes de animaciones*/
+
+@keyframes move-forever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+
+@keyframes BTC {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0;
+  }
+  30% {
+  }
+  40% {
+  }
+  50% {
+  }
+  60% {
+  }
+  70% {
+  }
+  80% {
+  }
+  90% {
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes ETH {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+  }
+  50% {
+  }
+  60% {
+  }
+  70% {
+  }
+  80% {
+  }
+  90% {
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes TT {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+  70% {
+  }
+  80% {
+  }
+  90% {
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes SOL {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  90% {
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes NFT {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/*responsive*/ /*Use las media querys de boostrap asi el diseño de la pagina es uniforme*/
+@media screen and(max-width: 1300px){
+  .inner-header {
+    padding-left: 15vw;
+    h1 {
+      font-size: 3rem;
+    }
+  }
+  .ilustracion {
+    display: none;
+  }
+}
+
+@media screen and(max-width: 992px){
+  .inner-header {
+    padding-left: 10vw;
+    h1 {
+      font-size: 2.5rem;
+    }
+  }
+}
+
+@media screen and(max-width: 768px) {
+  h1,
+  h2 {
+    text-align: center;
+  }
+  .inner-header {
+    padding-left: 10vw;
+    h1 {
+      font-size: 1.8rem;
+    }
+  }
+  .bodyNft {
+    width: 90vw;
+    padding: 1rem;
+  }
+  .cardPost {
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 1fr 1fr;
+    grid-template-areas:
+      "pic"
+      "text"
+      "p";
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    img {
+      align-self: center;
+      justify-self: center;
+      width: 15rem;
+      height: 10rem;
+    }
+  }
+  .formLoginRegister {
+    width: 22rem;
+    text-align: center;
+  }
+  .waves {
+    height: 40px;
+    min-height: 40px;
+  }
+  .content {
+    height: 30vh;
+  }
+  h1 {
+    font-size: 24px;
+  }
+}
+
+@media screen and(max-width: 576px) {
+  .inner-header {
+    padding-left: 10vw;
+    h1 {
+      font-size: 1.2rem;
+    }
+  }
+}
+
