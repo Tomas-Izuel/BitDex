@@ -1,0 +1,32 @@
+/*Settings iniciales*/
+$grid-breakpoints: ( /*map de mq de boostrap*/
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+$negro: #0e0b16;
+$rosa: #a239ca;
+$azul: #4717f6;
+$link: #b03cdf;
+$blanco: #ffffff;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Lexend", sans-serif;
+  background-color: $negro;
+  color: $blanco;
+  overflow-x: hidden;
+}
