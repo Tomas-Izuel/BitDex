@@ -30,3 +30,16 @@ body {
   color: $blanco;
   overflow-x: hidden;
 }
+/*cambio la barra de scroll*/
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: rgba(41, 41, 41, 0.158);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(85, 0, 102);
+  border-radius: 20px;
+}

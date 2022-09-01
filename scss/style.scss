@@ -56,12 +56,16 @@ h2 {
 }
 
 /*Navbar*/
+header{
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
 .navbar {
   border-radius: 0 0 3rem 0;
-  position: fixed;
   padding: 1rem 1.5rem 1.5rem 1rem;
   width: 100vw;
-  z-index: 1;
 }
 
 .container-fluid {
@@ -212,14 +216,14 @@ footer {
   @include flex;
   gap: 5rem;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .formLoginRegister {
   width: 30rem;
   height: auto;
   background-color: #261e3c;
-  color: var(--negro);
+  color: $blanco;
   border-radius: 2rem;
   padding: 2rem;
   @include flex;
@@ -766,6 +770,10 @@ input[type="number"] {
       height: 10rem;
     }
   }
+  .mainLoginRegister{
+    padding: 4rem 0;
+  }
+
   .formLoginRegister {
     width: 22rem;
     text-align: center;
@@ -794,15 +802,3 @@ input[type="number"] {
   }
 }
 
-@media screen and(max-height: 450px) {
-  main {
-    padding-top: 3rem;
-  }
-}
-
-@media screen and(max-height: 840px) {
-  .mainLoginRegister{
-    height: auto;
-    padding: 8rem 0 2rem 0;
-  }
-}
