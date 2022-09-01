@@ -16,7 +16,7 @@ body {
 
 /*cambio la barra de scroll*/
 body::-webkit-scrollbar {
-  width: 10px; }
+  width: 5px; }
 
 body::-webkit-scrollbar-track {
   background: rgba(41, 41, 41, 0.158); }
@@ -433,6 +433,7 @@ input[type="number"] {
   height: 60vh;
   background-image: url("../media/cool-background.png");
   background-size: cover;
+  border-radius: 0 3rem 1rem 1rem;
   /*ahorro lienas de codigo y trabajo escribiendo estas propiedades que se repiten mucho*/
   display: flex;
   justify-content: center;
