@@ -1,5 +1,5 @@
-@import "settings"; /*importo las configuraciones iniciales para mas orden*/
-@import "mixins";
+@import "_settings"; /*importo las configuraciones iniciales para mas orden*/
+@import "_mixins";
 
 a {
   text-decoration: none;
