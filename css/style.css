@@ -191,7 +191,6 @@ footer {
   align-items: center;
   gap: 1.2rem;
 }
-
 .credits a {
   /*ahorro lienas de codigo y trabajo escribiendo estas propiedades que se repiten mucho*/
   display: flex;
@@ -199,23 +198,19 @@ footer {
   align-items: center;
   text-decoration: none;
 }
-
 .credits a svg {
   width: 3em;
   height: 3em;
   fill: gray;
   transition: all 0.5s;
 }
-
 .credits a p {
   color: gray;
   transition: all 0.5s;
 }
-
 .credits a:hover svg {
   fill: #ffffff;
 }
-
 .credits a:hover p {
   color: #ffffff;
 }
@@ -238,12 +233,10 @@ footer {
   gap: 1.5rem;
   font-size: 1.8rem;
 }
-
 .communityLogos a {
   color: gray;
   transition: all 0.5s;
 }
-
 .communityLogos a:hover {
   color: #ffffff;
 }
@@ -255,7 +248,6 @@ footer {
   align-items: center;
   gap: 1.5rem;
 }
-
 .license p {
   color: gray;
 }
@@ -285,7 +277,6 @@ footer {
   flex-direction: column;
   gap: 2rem;
 }
-
 .formLoginRegister label {
   background-color: #1e1830;
   width: 80%;
@@ -295,7 +286,6 @@ footer {
   justify-content: center;
   align-items: center;
 }
-
 .formLoginRegister label .icon {
   width: 50%;
   height: 100%;
@@ -306,11 +296,9 @@ footer {
   align-items: center;
   background-color: #171324;
 }
-
 .formLoginRegister label .icon ion-icon {
   font-size: 1.5rem;
 }
-
 .formLoginRegister label input {
   width: 150%;
   height: 100%;
@@ -324,16 +312,33 @@ footer {
   padding: 0.5rem 0.5rem 0.5rem 1rem;
   transition: all 0.5s;
 }
-
 .formLoginRegister label:hover input {
   background-color: #161222;
   -webkit-appearance: none;
 }
-
 .formLoginRegister input:focus {
   background-color: #161222;
   border: none;
   outline: 0;
+}
+.formLoginRegister button {
+  width: 70%;
+  height: 3rem;
+  /*ahorro lienas de codigo y trabajo escribiendo estas propiedades que se repiten mucho*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.formLoginRegister button ion-icon {
+  font-size: 2rem;
+}
+.formLoginRegister a {
+  color: var(--rosa);
+  text-decoration: none;
+}
+.formLoginRegister a:hover {
+  text-decoration: underline;
 }
 
 /*Eliminar los botones de cambiar numero en el imput number*/
@@ -345,29 +350,6 @@ input::-webkit-inner-spin-button {
 
 input[type=number] {
   -moz-appearance: textfield;
-}
-
-.formLoginRegister button {
-  width: 70%;
-  height: 3rem;
-  /*ahorro lienas de codigo y trabajo escribiendo estas propiedades que se repiten mucho*/
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-}
-
-.formLoginRegister button ion-icon {
-  font-size: 2rem;
-}
-
-.formLoginRegister a {
-  color: var(--rosa);
-  text-decoration: none;
-}
-
-.formLoginRegister a:hover {
-  text-decoration: underline;
 }
 
 .ilustracion {
@@ -434,8 +416,8 @@ input[type=number] {
 .parallax > use:nth-child(3) {
   -webkit-animation-delay: -4s;
           animation-delay: -4s;
-  -webkit-animation-duration: 20s;
-          animation-duration: 20s;
+  -webkit-animation-duration: 13s;
+          animation-duration: 13s;
 }
 
 .parallax > use:nth-child(4) {
@@ -458,53 +440,37 @@ input[type=number] {
 
 .moneda {
   position: absolute;
-}
-
-.m0 {
   opacity: 0;
   margin-left: 0.6rem;
   -webkit-animation: monedas 20s infinite;
           animation: monedas 20s infinite;
+}
+
+.m0 {
   -webkit-animation-delay: 0s;
           animation-delay: 0s;
   color: #f7931a;
 }
 
 .m1 {
-  opacity: 0;
-  margin-left: 0.6rem;
-  -webkit-animation: monedas 20s infinite;
-          animation: monedas 20s infinite;
   -webkit-animation-delay: 4s;
           animation-delay: 4s;
   color: #a7a7a7;
 }
 
 .m2 {
-  opacity: 0;
-  margin-left: 0.6rem;
-  -webkit-animation: monedas 20s infinite;
-          animation: monedas 20s infinite;
   -webkit-animation-delay: 8s;
           animation-delay: 8s;
   color: #50af95;
 }
 
 .m3 {
-  opacity: 0;
-  margin-left: 0.6rem;
-  -webkit-animation: monedas 20s infinite;
-          animation: monedas 20s infinite;
   -webkit-animation-delay: 12s;
           animation-delay: 12s;
   color: #03e1ff;
 }
 
 .m4 {
-  opacity: 0;
-  margin-left: 0.6rem;
-  -webkit-animation: monedas 20s infinite;
-          animation: monedas 20s infinite;
   -webkit-animation-delay: 16s;
           animation-delay: 16s;
   color: #4717f6;

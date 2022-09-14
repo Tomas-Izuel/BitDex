@@ -1,53 +1,53 @@
 a {
-    text-decoration: none;
-    color: $blanco;
-  }
-  
-  .btn {
-    color: $blanco !important;
-  }
-  
-  .btn-primary {
-    background-color: $rosa;
-    border: none;
-    padding: 0.5rem;
-    transition: all 0.5s;
-  }
-  
-  .btn-primary:hover {
-    background-color: $link;
-    transform: translateY(-0.2rem);
-  }
-  
-  .btn-primary:focus {
-    background-color: $link;
-    border: none;
-    outline: none;
-  }
-  
-  .btn-secondary {
-    padding: 0.5rem;
-    border: none;
-    background-color: gray;
-    transition: all 0.5s;
-  }
-  
-  .btn-secondary:hover {
-    background-color: rgb(150, 150, 150);
-    transform: translateY(-0.2rem);
-  }
-  
-  p {
-    /*reseteando estilo de boostrap*/
-    padding: 0;
-    margin: 0;
-  }
-  
-  h1 {
-    font-size: 4rem;
-    text-align: center;
-  }
-  
-  h2 {
-    font-size: 2.5rem;
-  }
+  text-decoration: none;
+  color: $blanco;
+}
+
+.btn {
+  color: $blanco !important;
+}
+
+.btn-primary {
+  background-color: $rosa;
+  border: none;
+  padding: 0.5rem;
+  transition: all 0.5s;
+}
+
+.btn-primary:hover {
+  background-color: $link;
+  transform: translateY(-0.2rem);
+}
+
+.btn-primary:focus {
+  background-color: $link;
+  border: none;
+  outline: none;
+}
+
+.btn-secondary {
+  padding: 0.5rem;
+  border: none;
+  background-color: gray;
+  transition: all 0.5s;
+}
+
+.btn-secondary:hover {
+  background-color: rgb(150, 150, 150);
+  transform: translateY(-0.2rem);
+}
+
+p {
+  /*reseteando estilo de boostrap*/
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  font-size: 4rem;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2.5rem;
+}

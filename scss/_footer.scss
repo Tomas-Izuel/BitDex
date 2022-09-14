@@ -13,31 +13,28 @@ footer {
     justify-content: flex-start;
     align-items: center;
     gap: 1.2rem;
-  }
-  
-  .credits a {
-    @include flex;
-    text-decoration: none;
-  }
-  
-  .credits a svg {
-    width: 3em;
-    height: 3em;
-    fill: gray;
-    transition: all 0.5s;
-  }
-  
-  .credits a p {
-    color: gray;
-    transition: all 0.5s;
-  }
-  
-  .credits a:hover svg {
-    fill: $blanco;
-  }
-  
-  .credits a:hover p {
-    color: $blanco;
+    a {
+      @include flex;
+      text-decoration: none;
+      svg {
+        width: 3em;
+        height: 3em;
+        fill: gray;
+        transition: all 0.5s;
+      }
+      p {
+        color: gray;
+        transition: all 0.5s;
+      }
+    }
+    a:hover{
+      svg{
+        fill: $blanco;
+      }
+      p{
+        color: $blanco;
+      }
+    }
   }
   
   .community {
@@ -54,15 +51,13 @@ footer {
     flex-wrap: wrap;
     gap: 1.5rem;
     font-size: 1.8rem;
-  }
-  
-  .communityLogos a {
-    color: gray;
-    transition: all 0.5s;
-  }
-  
-  .communityLogos a:hover {
-    color: $blanco;
+    a{
+      color: gray;
+      transition: all 0.5s;
+    }
+    a:hover{
+      color: $blanco;
+    }
   }
   
   .license {
@@ -71,10 +66,9 @@ footer {
     justify-content: flex-start;
     align-items: center;
     gap: 1.5rem;
-  }
-  
-  .license p {
-    color: gray;
+    p{
+      color: gray;
+    }
   }
   
   /*Register y Login*/
@@ -96,47 +90,59 @@ footer {
     @include flex;
     flex-direction: column;
     gap: 2rem;
-  }
-  
-  .formLoginRegister label {
-    background-color: #1e1830;
-    width: 80%;
-    height: 4rem;
-    @include flex;
-  }
-  
-  .formLoginRegister label .icon {
-    width: 50%;
-    height: 100%;
-    color: gray;
-    @include flex;
-    background-color: #171324;
-  }
-  
-  .formLoginRegister label .icon ion-icon {
-    font-size: 1.5rem;
-  }
-  
-  .formLoginRegister label input {
-    width: 150%;
-    height: 100%;
-    color: gray;
-    border: none;
-    @include flex;
-    background-color: #1f1a30;
-    padding: 0.5rem 0.5rem 0.5rem 1rem;
-    transition: all 0.5s;
-  }
-  
-  .formLoginRegister label:hover input {
-    background-color: #161222;
-    -webkit-appearance: none;
-  }
-  
-  .formLoginRegister input:focus {
-    background-color: #161222;
-    border: none;
-    outline: 0;
+    label{
+      background-color: #1e1830;
+      width: 80%;
+      height: 4rem;
+      @include flex;
+      .icon{
+        width: 50%;
+        height: 100%;
+        color: gray;
+        @include flex;
+        background-color: #171324;
+        ion-icon{
+          font-size: 1.5rem;
+        }
+      }
+      input{
+        width: 150%;
+        height: 100%;
+        color: gray;
+        border: none;
+        @include flex;
+        background-color: #1f1a30;
+        padding: 0.5rem 0.5rem 0.5rem 1rem;
+        transition: all 0.5s;
+      }
+    }
+    label:hover{
+      input{
+        background-color: #161222;
+        -webkit-appearance: none;
+      }
+    }
+    input:focus{
+      background-color: #161222;
+      border: none;
+      outline: 0;
+    }
+    button{
+      width: 70%;
+      height: 3rem;
+      @include flex;
+      gap: 1rem;
+      ion-icon{
+        font-size: 2rem;
+      }
+    }
+    a{
+      color: var(--rosa);
+      text-decoration: none;
+    }
+    a:hover{
+      text-decoration: underline;
+    }
   }
   /*Eliminar los botones de cambiar numero en el imput number*/
   input::-webkit-outer-spin-button,
@@ -147,26 +153,6 @@ footer {
   
   input[type="number"] {
     -moz-appearance: textfield;
-  }
-  
-  .formLoginRegister button {
-    width: 70%;
-    height: 3rem;
-    @include flex;
-    gap: 1rem;
-  }
-  
-  .formLoginRegister button ion-icon {
-    font-size: 2rem;
-  }
-  
-  .formLoginRegister a {
-    color: var(--rosa);
-    text-decoration: none;
-  }
-  
-  .formLoginRegister a:hover {
-    text-decoration: underline;
   }
   
   .ilustracion {
