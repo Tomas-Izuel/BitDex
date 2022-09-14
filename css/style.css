@@ -412,7 +412,6 @@ input[type=number] {
   background-color: white;
 }
 
-/* Animacion wave */
 .parallax > use {
   -webkit-animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
           animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
@@ -435,8 +434,8 @@ input[type=number] {
 .parallax > use:nth-child(3) {
   -webkit-animation-delay: -4s;
           animation-delay: -4s;
-  -webkit-animation-duration: 13s;
-          animation-duration: 13s;
+  -webkit-animation-duration: 20s;
+          animation-duration: 20s;
 }
 
 .parallax > use:nth-child(4) {
@@ -461,49 +460,60 @@ input[type=number] {
   position: absolute;
 }
 
-.BTC,
-.ETH,
-.TT,
-.SOL,
-.NFT {
+.m0 {
   opacity: 0;
   margin-left: 0.6rem;
+  -webkit-animation: monedas 20s infinite;
+          animation: monedas 20s infinite;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  color: #f7931a;
+}
+
+.m1 {
+  opacity: 0;
+  margin-left: 0.6rem;
+  -webkit-animation: monedas 20s infinite;
+          animation: monedas 20s infinite;
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+  color: #a7a7a7;
+}
+
+.m2 {
+  opacity: 0;
+  margin-left: 0.6rem;
+  -webkit-animation: monedas 20s infinite;
+          animation: monedas 20s infinite;
+  -webkit-animation-delay: 8s;
+          animation-delay: 8s;
+  color: #50af95;
+}
+
+.m3 {
+  opacity: 0;
+  margin-left: 0.6rem;
+  -webkit-animation: monedas 20s infinite;
+          animation: monedas 20s infinite;
+  -webkit-animation-delay: 12s;
+          animation-delay: 12s;
+  color: #03e1ff;
+}
+
+.m4 {
+  opacity: 0;
+  margin-left: 0.6rem;
+  -webkit-animation: monedas 20s infinite;
+          animation: monedas 20s infinite;
+  -webkit-animation-delay: 16s;
+          animation-delay: 16s;
+  color: #4717f6;
 }
 
 .tcash {
   background: -webkit-linear-gradient(#b03cdf, #a239ca);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-.BTC {
-  -webkit-animation: BTC 20s infinite;
-          animation: BTC 20s infinite;
-  color: #f7931a;
-}
-
-.ETH {
-  -webkit-animation: ETH 20s infinite;
-          animation: ETH 20s infinite;
-  color: #a7a7a7;
-}
-
-.TT {
-  -webkit-animation: TT 20s infinite;
-          animation: TT 20s infinite;
-  color: #50af95;
-}
-
-.SOL {
-  -webkit-animation: SOL 20s infinite;
-          animation: SOL 20s infinite;
-  color: #03e1ff;
-}
-
-.NFT {
-  -webkit-animation: NFT 20s infinite;
-          animation: NFT 20s infinite;
-  color: #4717f6;
 }
 
 .dataIndex {
@@ -518,6 +528,7 @@ input[type=number] {
   padding-bottom: 4rem;
 }
 
+/*Puse varias paginas en este scss porque son pequeñas*/
 /*Criptos*/
 .mainCripto .headerNft {
   background-image: url("../media/layered-waves-haikei.svg");
@@ -574,6 +585,12 @@ input[type=number] {
   border-radius: 0;
 }
 
+/*Informacion*/
+.mainInfo .headerNft {
+  background-image: url("../media/blob-haikei.svg");
+  background-position: center;
+}
+
 /*Blog*/
 .mainBlog .headerNft {
   background-image: url("../media/blurry-gradient-haikei.svg");
@@ -619,12 +636,6 @@ input[type=number] {
   color: #b03cdf;
 }
 
-/*Informacion*/
-.mainInfo .headerNft {
-  background-image: url("../media/blob-haikei.svg");
-  background-position: center;
-}
-
 /*Keyframes de animaciones*/
 @-webkit-keyframes move-forever {
   0% {
@@ -642,7 +653,7 @@ input[type=number] {
     transform: translate3d(85px, 0, 0);
   }
 }
-@-webkit-keyframes BTC {
+@-webkit-keyframes monedas {
   0% {
     opacity: 0;
   }
@@ -656,7 +667,7 @@ input[type=number] {
     opacity: 0;
   }
 }
-@keyframes BTC {
+@keyframes monedas {
   0% {
     opacity: 0;
   }
@@ -665,232 +676,6 @@ input[type=number] {
   }
   20% {
     opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@-webkit-keyframes ETH {
-  0% {
-    opacity: 0;
-  }
-  10% {
-    opacity: 0;
-  }
-  20% {
-    opacity: 0;
-  }
-  30% {
-    opacity: 1;
-  }
-  40% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@keyframes ETH {
-  0% {
-    opacity: 0;
-  }
-  10% {
-    opacity: 0;
-  }
-  20% {
-    opacity: 0;
-  }
-  30% {
-    opacity: 1;
-  }
-  40% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@-webkit-keyframes TT {
-  0% {
-    opacity: 0;
-  }
-  10% {
-    opacity: 0;
-  }
-  20% {
-    opacity: 0;
-  }
-  30% {
-    opacity: 0;
-  }
-  40% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  60% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@keyframes TT {
-  0% {
-    opacity: 0;
-  }
-  10% {
-    opacity: 0;
-  }
-  20% {
-    opacity: 0;
-  }
-  30% {
-    opacity: 0;
-  }
-  40% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  60% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@-webkit-keyframes SOL {
-  0% {
-    opacity: 0;
-  }
-  10% {
-    opacity: 0;
-  }
-  20% {
-    opacity: 0;
-  }
-  30% {
-    opacity: 0;
-  }
-  40% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 0;
-  }
-  60% {
-    opacity: 0;
-  }
-  70% {
-    opacity: 1;
-  }
-  80% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@keyframes SOL {
-  0% {
-    opacity: 0;
-  }
-  10% {
-    opacity: 0;
-  }
-  20% {
-    opacity: 0;
-  }
-  30% {
-    opacity: 0;
-  }
-  40% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 0;
-  }
-  60% {
-    opacity: 0;
-  }
-  70% {
-    opacity: 1;
-  }
-  80% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@-webkit-keyframes NFT {
-  0% {
-    opacity: 0;
-  }
-  10% {
-    opacity: 0;
-  }
-  20% {
-    opacity: 0;
-  }
-  30% {
-    opacity: 0;
-  }
-  40% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 0;
-  }
-  60% {
-    opacity: 0;
-  }
-  70% {
-    opacity: 0;
-  }
-  80% {
-    opacity: 0;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@keyframes NFT {
-  0% {
-    opacity: 0;
-  }
-  10% {
-    opacity: 0;
-  }
-  20% {
-    opacity: 0;
-  }
-  30% {
-    opacity: 0;
-  }
-  40% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 0;
-  }
-  60% {
-    opacity: 0;
-  }
-  70% {
-    opacity: 0;
-  }
-  80% {
-    opacity: 0;
-  }
-  90% {
-    opacity: 1;
   }
   100% {
     opacity: 0;

@@ -1,0 +1,65 @@
+/*Puse varias paginas en este scss porque son pequeñas*/
+
+/*Criptos*/
+.mainCripto {
+    .headerNft {
+    background-image: url("../media/layered-waves-haikei.svg");
+    background-position: center;
+    }
+}
+
+/*NFT*/
+.headerNft {
+    width: 100%;
+    height: 60vh;
+    background-image: url("../media/cool-background.png");
+    background-size: cover;
+    border-radius: 0 3rem 1rem 1rem;
+    @include flex;
+}
+
+.bodyNft {
+    background-color: $blanco;
+    color: $negro;
+    width: 80vw;
+    margin: 0 auto;
+    position: relative;
+    transform: translateY(-5rem);
+    padding: 3rem;
+    border-radius: 2rem;
+    box-shadow: 0.9px 1.1px 3.6px rgba(0, 0, 0, 0.105),
+    2.4px 3px 10px rgba(0, 0, 0, 0.15), 5.7px 7.2px 24.1px rgba(0, 0, 0, 0.195),
+    19px 24px 80px rgba(0, 0, 0, 0.3);
+    h2 {
+    margin: 2rem 0;
+    }
+    .coleccionesNft {
+    @include flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    }
+    .collapseCriptos {
+    width: 100%;
+    .accordion-item {
+        box-shadow: 12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+        100px 100px 80px rgba(0, 0, 0, 0.07);
+        img {
+        width: 4rem;
+        border-radius: 50%;
+        }
+        .accordion-img {
+        width: 60%;
+        border-radius: 0;
+        }
+    }
+    }
+}
+  
+/*Informacion*/
+.mainInfo {
+    .headerNft {
+    background-image: url("../media/blob-haikei.svg");
+    background-position: center;
+    }
+}
+   

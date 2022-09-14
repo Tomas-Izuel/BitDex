@@ -1,0 +1,46 @@
+/*Blog*/
+.mainBlog {
+    .headerNft {
+      background-image: url("../media/blurry-gradient-haikei.svg");
+      background-position: center;
+    }
+  }
+  
+  .post {
+    @include flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  
+  .cardPost {
+    width: 40rem;
+    display: grid;
+    color: $negro;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 2fr 1fr;
+    grid-template-areas:
+      "pic text"
+      "pic p";
+    gap: 1rem;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.06), 0px 0px 80px rgba(0, 0, 0, 0.12);
+    border-radius: 2rem;
+    padding: 1rem;
+    transition: all 0.5s;
+    img {
+      grid-area: pic;
+      border-radius: 2rem;
+      width: 15rem;
+      height: 10rem;
+    }
+    h4 {
+      grid-area: text;
+    }
+    p {
+      grid-area: p;
+    }
+  }
+  
+  .cardPost:hover {
+    color: $link;
+  }
+  
