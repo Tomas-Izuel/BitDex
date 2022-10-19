@@ -16,7 +16,7 @@ const user2 = {
 //Array simulando la tabla de usuarios de la base de datos.
 const db_user = [user1, user2]
 
-const precioBTC = 19000
+const precioBTC = 19000 //Este valor deberia ser variable consumiendo una API, pero para esta primera instancia se declara constante
 
 //Metodo para registrar el usuario
 const register = (usuario,contraseña, fondos) => {
@@ -71,14 +71,22 @@ const precio = (indiceUser) =>{
     menuIn(indiceUser);
 }
 
+const fondo = (indiceUser) => {
+    alert("Tu saldo es de: " + db_user[indiceUser].fondos);
+    menuIn(indiceUser);
+}
+
 const menuIn = (indiceUser) =>{ //Menu una vez logueado en el sistema
-    let menuSelector = prompt("Seleccione opcion: \n 1 - comprar BTC \n 2 - ver valor de BTC \n 0 - Salir")
+    let menuSelector = prompt("Seleccione opcion: \n 1 - comprar BTC \n 2 - ver valor de BTC \n 3 - ver tus fondos actuales \n 0 - Salir")
     switch (menuSelector){
         case "1":
             compra(parseInt(prompt("Ingrese cantidad de BTC")), indiceUser)
             break;
         case "2":
             precio(indiceUser);
+            break;
+        case "3":
+            fondo(indiceUser);
             break;
         case "0":
             break;
