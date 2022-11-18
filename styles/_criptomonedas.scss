@@ -1,0 +1,120 @@
+.mainCripto {
+  width: 100vw;
+  background: linear-gradient(
+    127.25deg,
+    #111111 13.67%,
+    #1a1041 44.13%,
+    #330543 91.64%
+  );
+  @include flex;
+  gap: 2rem;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 13rem 10rem 5rem;
+  .searchBar{
+    border: none;
+    padding: 1.5rem;
+    width: 40rem;
+    background-color: #192545;
+    border-radius: 2rem;
+    transition: all 1s;
+    font-size: 1.5rem;
+  }
+  .searchBar:focus{
+    border: 1px solid #304585;
+    outline: none;
+  }
+  .tags{
+    @include flex;
+    gap: 1rem;
+  }
+  .active{
+    background-color: #304585;
+    ion-icon{
+        transform: rotate(45deg);
+        color: #e00000;
+    }
+  }
+  .criptoGallery{
+    margin-top: 1rem;
+    @include flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    .cripto{
+        width: 80vw;
+        @include flex;
+        justify-content: space-between;
+        background-color: #171D3D;
+        padding: 1rem 1.5rem;
+        border-radius: 2rem;
+        .nameCripto{
+            width: 15rem;
+            @include flex;
+            justify-content: flex-start;
+            gap: 0.5rem;
+            img{
+                width: 2rem;
+            }
+            h3{
+                font-size: 1.5rem;
+                span{
+                    color: rgb(184, 184, 184);
+                }
+            }
+        }
+        .valueCripto{
+            width: 10rem;
+            @include flex;
+        }
+        .marketCapCripto{
+            width: 12rem;
+            @include flex;
+        }
+        .negative{
+            width: 5.5rem;
+            background-color: #e00000;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+        }
+        .positive{
+            width: 5.5rem;
+            background-color: green;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+        }
+    }
+    .cripto:hover{
+        background-color: #242d5f;
+    }
+    .criptoTitles{
+        background-color: transparent;
+        ion-icon{
+            color: transparent;
+        }
+    }
+    .criptoTitles:hover{
+        background-color: transparent;
+    }
+  }
+}
+
+
+#btc{
+    background-color: orange;
+    color: black;
+}
+
+#prs{
+    background-color: cyan;
+    color: black;
+}
+
+#ncr{
+    background-color: purple;
+}
+
+#tir{
+    background-color: lightblue;
+    color: black;
+}

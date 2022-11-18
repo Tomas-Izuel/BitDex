@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <title>BitDex - Home</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <a href="../index.html" class="brand selected">BitDex</a>
+        <ul class="pages" id="pages">
+          <li><a href="">Criptomonedas</a></li>
+          <li><a href="">NFTs</a></li>
+          <li><a href="">Ayuda</a></li>
+        </ul>
+        <ul class="profile" id="profile">
+          <li>
+            <button class="lightButton"><a href="./register.html">Registrarse</a></button>
+          </li>
+          <li>
+            <button class="darkButton"><a href="./login.html">Iniciar sesión</a></button>
+          </li>
+        </ul>
+        <ul class="noProfile" id="noProfile">
+          <li><button></button></li>
+          <li>
+            <button><a href=""></a></button>
+          </li>
+          <li></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="mainLoginRegister register">
+      <form action="" id="formRegister">
+        <h1>Crea una nueva cuenta en BitDex</h1>
+        <div class="input">
+          <label for="">Nombre de usuario</label>
+          <input type="text" maxlength="25" id="username" required/>
+        </div>
+        <div class="input">
+          <label for="">Contraseña</label>
+          <input type="password" minlength="5" id="password" required/>
+        </div>
+        <div class="input">
+          <label for="">Email</label>
+          <input type="email" id="email" required/>
+        </div>
+        <div class="input">
+          <label for="">Numero de telefono</label>
+          <input type="number" id="phone" maxlength="10" required/>
+        </div>
+        <div class="endForm">
+          <button class="lightButton" id="submitRegister">
+            Registrarse<ion-icon name="navigate-circle-outline"></ion-icon>
+          </button>
+          <p>¿Ya tienes una cuenta? <a href="./login.html">Inicia sesión</a></p>
+        </div>
+      </form>
+    </main>
+    <footer></footer>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script type="module" src="../scripts/register.js"></script>
+    <script type="module" src="../scripts/animations.js"></script>
+  </body>
+</html>

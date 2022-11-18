@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <title>BitDex - Home</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <a href="../index.html" class="brand selected">BitDex</a>
+        <ul class="pages" id="pages">
+          <li><a href="" class="selected">Criptomonedas</a></li>
+          <li><a href="">NFTs</a></li>
+          <li><a href="">Ayuda</a></li>
+        </ul>
+        <ul class="profile" id="profile">
+          <li>
+            <button class="lightButton">
+              <a href="../pages/register.html">Registrarse</a>
+            </button>
+          </li>
+          <li>
+            <button class="darkButton">
+              <a href="../pages/login.html">Iniciar sesión</a>
+            </button>
+          </li>
+        </ul>
+        <ul class="noProfile" id="noProfile">
+          <li>
+            <button class="darkButton logout" id="logout">
+              <ion-icon name="log-out-outline"></ion-icon>
+            </button>
+          </li>
+          <li>
+            <button class="darkButton"><a href="">Mi wallet</a></button>
+          </li>
+          <li class="icon">
+            <a href=""><ion-icon name="person-circle-outline"></ion-icon></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="mainCripto">
+      <section class="search">
+        <input
+          type="text"
+          placeholder="Busca una cripto"
+          class="searchBar"
+          id="searchBar"
+        />
+      </section>
+      <section class="tags">
+        <article class="tag">
+          <button class="darkButton active">
+            Mas populares <ion-icon name="add-circle-outline"></ion-icon>
+          </button>
+        </article>
+        <article class="tag">
+          <button class="darkButton">
+            En subida <ion-icon name="add-circle-outline"></ion-icon>
+          </button>
+        </article>
+        <article class="tag">
+          <button class="darkButton">
+            En bajada <ion-icon name="add-circle-outline"></ion-icon>
+          </button>
+        </article>
+        <article class="tag">
+          <button class="darkButton">
+            Precio creciente <ion-icon name="add-circle-outline"></ion-icon>
+          </button>
+        </article>
+        <article class="tag">
+          <button class="darkButton">
+            Precio decreciente <ion-icon name="add-circle-outline"></ion-icon>
+          </button>
+        </article>
+      </section>
+      <section class="criptoGallery">
+        <a href="" class="cripto criptoTitles">
+          <div class="nameCripto">
+            <ion-icon name="prism-outline"></ion-icon>
+            <h3>Nombre</h3>
+          </div>
+          <div class="valueCripto">
+            <p>Precio</p>
+          </div>
+          <div class="marketCapCripto">
+            <p>Capacidad de mercado</p>
+          </div>
+          <div class="lastWeekCripto">
+            <p>Ult. semana</p>
+          </div>
+        </a>
+      </section>
+    </main>
+    <footer></footer>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="../scripts/user.js"></script>
+    <script src="../scripts/criptos.js"></script>
+  </body>
+</html>
