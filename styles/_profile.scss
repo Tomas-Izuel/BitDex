@@ -1,0 +1,76 @@
+.mainProfile {
+  padding: 10rem 0;
+  width: 100vw;
+  min-height: 100vh;
+  background: linear-gradient(
+    25.25deg,
+    #111111 13.67%,
+    #1a1041 44.13%,
+    #330543 91.64%
+  );
+  @include flex;
+  flex-direction: column;
+  gap: 2rem;
+  .profileInfo {
+    width: 60rem;
+    background-color: rgba(112, 112, 112, 0.068);
+    border-radius: 2rem;
+    @include flex;
+    flex-direction: column;
+    padding-top: 2rem;
+    .profileForm {
+      padding: 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      justify-content: center;
+      align-items: center;
+      grid-template-areas: "nameInfo passInfo"
+      "emailInfo phoneInfo"
+      "submitInfo submitInfo";
+      .input {
+        width: 25rem;
+      }
+      .nameInfo{
+        grid-area: nameInfo;
+      }
+      .passInfo{
+        grid-area: passInfo;
+      }
+      .emailInfo{
+        grid-area: emailInfo;
+      }
+      .phoneInfo{
+       grid-area: phoneInfo; 
+      }
+      .submitInfo{
+        grid-area: submitInfo;
+      }
+    }
+    .cardGalleryTarjetas{
+      padding: 2rem 0;
+      @include flex;
+      flex-direction: column;
+      gap: 1.5rem
+    }
+    .cardTarjeta{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      justify-content: center;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #111111;
+      padding: 1rem 1rem 1rem 2rem;
+      width: 45rem;
+      border-radius: 2rem;
+      button{
+        background-color: transparent;
+        border: none;
+        ion-icon{
+          font-size: 2rem;
+          color: red;
+        }
+      }
+    }
+  }
+}

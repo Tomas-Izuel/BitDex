@@ -11,14 +11,14 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../styles/style.css" />
-    <title>BitDex - Criptomonedas</title>
+    <title>BitDex - Home</title>
   </head>
   <body>
     <header>
       <nav class="navbar">
         <a href="../index.html" class="brand selected">BitDex</a>
         <ul class="pages" id="pages">
-          <li><a href="./pages/criptomonedas.html" class="selected">Criptomonedas</a></li>
+          <li><a href="../pages/criptomonedas.html">Criptomonedas</a></li>
           <li><a href="">Ayuda</a></li>
         </ul>
         <ul class="profile" id="profile">
@@ -43,59 +43,54 @@
             <button class="darkButton"><a href="">Mi wallet</a></button>
           </li>
           <li class="icon">
-            <a href="../pages/profile.html"><ion-icon name="person-circle-outline"></ion-icon></a>
+            <a href="../pages/profile.html"
+              ><ion-icon name="person-circle-outline"></ion-icon
+            ></a>
           </li>
         </ul>
       </nav>
     </header>
-    <main class="mainCripto">
-      <section class="search">
-        <input
-          type="text"
-          placeholder="Busca una cripto"
-          class="searchBar"
-          id="searchBar"
-        />
+    <main class="mainProfile">
+      <section class="profileInfo">
+        <h1>Editar perfil</h1>
+        <form action="" class="formRegister profileForm">
+          <div class="input nameInfo">
+            <label for="">Nombre de usuario</label>
+            <input type="text" id="usernameP"/>
+          </div>
+          <div class="input passInfo">
+            <label for="">Contraseña</label>
+            <input type="password" minlength="5" id="passwordP" required/>
+          </div>
+          <div class="input emailInfo">
+            <label for="">Email</label>
+            <input type="email" id="emailP"/>
+          </div>
+          <div class="input phoneInfo">
+            <label for="">Numero de telefon</label>
+            <input type="number" id="numeroP"/>
+          </div>
+          <button class="darkButton submitInfo" id="submitProfile">
+            Guardar cambios<ion-icon name="cog-outline"></ion-icon>
+          </button>
+        </form>
       </section>
-      <section class="tags">
-        <article class="tag">
-          <button type="button" class="darkButton" id="all">
-            Todos <ion-icon name="add-circle-outline"></ion-icon>
-          </button>
-        </article>
-        <article class="tag">
-          <button type="button" class="darkButton" id="top">
-            Mas populares <ion-icon name="add-circle-outline"></ion-icon>
-          </button>
-        </article>
-        <article class="tag">
-          <button type="button" class="darkButton" id="up">
-            En subida <ion-icon name="add-circle-outline"></ion-icon>
-          </button>
-        </article>
-        <article class="tag">
-          <button type="button" class="darkButton" id="down">
-            En bajada <ion-icon name="add-circle-outline"></ion-icon>
-          </button>
-        </article>
-      </section>
-      <section class="criptoGallery">
-        <a href="" class="cripto criptoTitles">
-          <div class="nameCripto">
-            <ion-icon name="prism-outline"></ion-icon>
-            <h3>Nombre</h3>
+      <section class="profileInfo">
+        <h1>Administrar tarjetas</h1>
+        <div class="cardGalleryTarjetas">
+          <div class="cardTarjeta">
+            <h3>Visa</h3>
+            <p>**** **** **** **89</p>
+            <p>Vencimiento: 07/24</p>
+            <button><ion-icon name="close-circle-outline"></ion-icon></button>
           </div>
-          <div class="valueCripto">
-            <p>Precio</p>
+          <div class="cardTarjeta">
+            <h3>MasterCard</h3>
+            <p>**** **** **** **89</p>
+            <p>Vencimiento: 07/24</p>
+            <button><ion-icon name="close-circle-outline"></ion-icon></button>
           </div>
-          <div class="marketCapCripto">
-            <p>Capacidad de mercado</p>
-          </div>
-          <div class="lastWeekCripto">
-            <p>Ult. semana</p>
-          </div>
-        </a>
-        <div class="criptoGalleryCards"></div>
+        </div>
       </section>
     </main>
     <footer></footer>
@@ -108,6 +103,7 @@
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
     ></script>
     <script src="../scripts/user.js"></script>
-    <script src="../scripts/cripto.js"></script>
+    <script type="module" src="../scripts/profile.js"></script>
+    <script type="module" src="../scripts/animations.js"></script>
   </body>
 </html>

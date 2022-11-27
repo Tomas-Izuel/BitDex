@@ -11,15 +11,14 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../styles/style.css" />
-    <title>BitDex - Home</title>
+    <title>BitDex - Login</title>
   </head>
   <body>
     <header>
       <nav class="navbar">
         <a href="../index.html" class="brand selected">BitDex</a>
         <ul class="pages" id="pages">
-          <li><a href="">Criptomonedas</a></li>
-          <li><a href="">NFTs</a></li>
+          <li><a href="../pages/criptomonedas.html">Criptomonedas</a></li>
           <li><a href="">Ayuda</a></li>
         </ul>
         <ul class="profile" id="profile">
@@ -31,16 +30,22 @@
           </li>
         </ul>
         <ul class="noProfile" id="noProfile">
-          <li><button></button></li>
           <li>
-            <button><a href=""></a></button>
+            <button class="darkButton logout" id="logout">
+              <ion-icon name="log-out-outline"></ion-icon>
+            </button>
           </li>
-          <li></li>
+          <li>
+            <button class="darkButton"><a href="">Mi wallet</a></button>
+          </li>
+          <li class="icon">
+            <a href="../pages/profile.html"><ion-icon name="person-circle-outline"></ion-icon></a>
+          </li>
         </ul>
       </nav>
     </header>
     <main class="mainLoginRegister login">
-      <form action="" id="formLogin">
+      <form action="" id="formLogin" class="formRegister">
         <h1>Inicia sesión con tu cuenta de BitDex</h1>
         <div class="input">
           <label for="">Nombre de usuario</label>

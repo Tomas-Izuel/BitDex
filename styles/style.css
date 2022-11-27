@@ -287,7 +287,8 @@ header {
   align-items: center;
   justify-content: flex-start;
 }
-.mainLoginRegister form {
+
+.formRegister {
   padding: 10rem;
   border-radius: 2rem;
   background-size: cover;
@@ -298,17 +299,17 @@ header {
   align-items: flex-start;
   gap: 2rem;
 }
-.mainLoginRegister form input {
+.formRegister input {
   border: none;
   background-color: transparent;
   width: 100%;
   padding: 0.5rem;
 }
-.mainLoginRegister form input:focus {
+.formRegister input:focus {
   border: none;
   outline: none;
 }
-.mainLoginRegister form .input {
+.formRegister .input {
   background-color: #151236;
   border-radius: 0.5rem;
   padding: 1rem;
@@ -320,13 +321,13 @@ header {
   gap: 0.5rem;
   align-items: flex-start;
 }
-.mainLoginRegister form .input label {
+.formRegister .input label {
   color: #777777;
 }
-.mainLoginRegister form .input:hover {
+.formRegister .input:hover {
   background-color: #1f1c3d;
 }
-.mainLoginRegister form .endForm {
+.formRegister .endForm {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -334,12 +335,12 @@ header {
   flex-direction: column;
   gap: 0.5rem;
 }
-.mainLoginRegister form button {
+.formRegister button {
   border-radius: 1rem;
   width: 100%;
   height: 4rem;
 }
-.mainLoginRegister form p a {
+.formRegister p a {
   color: #3e92cc;
   border-bottom: 1px solid #3e92cc;
 }
@@ -356,10 +357,12 @@ header {
 
 .mainCripto {
   width: 100vw;
+  min-height: 100vh;
   background: linear-gradient(127.25deg, #111111 13.67%, #1a1041 44.13%, #330543 91.64%);
   display: flex;
   justify-content: center;
   align-items: center;
+  justify-content: flex-start;
   gap: 2rem;
   flex-direction: column;
   align-items: flex-start;
@@ -398,7 +401,15 @@ header {
   align-items: center;
   flex-direction: column;
   align-items: flex-start;
+}
+.mainCripto .criptoGallery .criptoGalleryCards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 1rem;
+  overflow-y: hidden;
 }
 .mainCripto .criptoGallery .cripto {
   width: 80vw;
@@ -444,12 +455,18 @@ header {
   background-color: #e00000;
   padding: 0.5rem 1rem;
   border-radius: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .mainCripto .criptoGallery .cripto .positive {
   width: 5.5rem;
   background-color: green;
   padding: 0.5rem 1rem;
   border-radius: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .mainCripto .criptoGallery .cripto:hover {
   background-color: #242d5f;
@@ -462,6 +479,9 @@ header {
 }
 .mainCripto .criptoGallery .criptoTitles:hover {
   background-color: transparent;
+}
+.mainCripto h2 {
+  margin-top: 2rem;
 }
 
 #btc {
@@ -481,4 +501,80 @@ header {
 #tir {
   background-color: lightblue;
   color: black;
+}
+
+.mainProfile {
+  padding: 10rem 0;
+  width: 100vw;
+  min-height: 100vh;
+  background: linear-gradient(25.25deg, #111111 13.67%, #1a1041 44.13%, #330543 91.64%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+.mainProfile .profileInfo {
+  width: 60rem;
+  background-color: rgba(112, 112, 112, 0.068);
+  border-radius: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 2rem;
+}
+.mainProfile .profileInfo .profileForm {
+  padding: 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  grid-template-areas: "nameInfo passInfo" "emailInfo phoneInfo" "submitInfo submitInfo";
+}
+.mainProfile .profileInfo .profileForm .input {
+  width: 25rem;
+}
+.mainProfile .profileInfo .profileForm .nameInfo {
+  grid-area: nameInfo;
+}
+.mainProfile .profileInfo .profileForm .passInfo {
+  grid-area: passInfo;
+}
+.mainProfile .profileInfo .profileForm .emailInfo {
+  grid-area: emailInfo;
+}
+.mainProfile .profileInfo .profileForm .phoneInfo {
+  grid-area: phoneInfo;
+}
+.mainProfile .profileInfo .profileForm .submitInfo {
+  grid-area: submitInfo;
+}
+.mainProfile .profileInfo .cardGalleryTarjetas {
+  padding: 2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.mainProfile .profileInfo .cardTarjeta {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #111111;
+  padding: 1rem 1rem 1rem 2rem;
+  width: 45rem;
+  border-radius: 2rem;
+}
+.mainProfile .profileInfo .cardTarjeta button {
+  background-color: transparent;
+  border: none;
+}
+.mainProfile .profileInfo .cardTarjeta button ion-icon {
+  font-size: 2rem;
+  color: red;
 }/*# sourceMappingURL=style.css.map */
