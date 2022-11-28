@@ -17,7 +17,7 @@
     border-radius: 2rem;
     @include flex;
     flex-direction: column;
-    padding-top: 2rem;
+    padding: 3rem 0;
     .profileForm {
       padding: 3rem;
       display: grid;
@@ -72,5 +72,19 @@
         }
       }
     }
+  }
+}
+
+.newCard{
+  padding: 0;
+  select{
+    background-color: #151236;
+    padding: 0.5rem;
+    border: none;
+    width: 100%;
+  }
+  select:focus{
+    border: none;
+    outline: none;
   }
 }

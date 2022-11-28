@@ -39,6 +39,12 @@ a {
   text-decoration: none;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 button {
   padding: 1rem;
 }
@@ -346,7 +352,7 @@ header {
 }
 
 .register {
-  background-image: url("../media/backgrounLogin2.png");
+  background-image: url("../media/backgrounLogin.png");
   background-size: cover;
 }
 
@@ -522,7 +528,7 @@ header {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding-top: 2rem;
+  padding: 3rem 0;
 }
 .mainProfile .profileInfo .profileForm {
   padding: 3rem;
@@ -577,4 +583,18 @@ header {
 .mainProfile .profileInfo .cardTarjeta button ion-icon {
   font-size: 2rem;
   color: red;
+}
+
+.newCard {
+  padding: 0;
+}
+.newCard select {
+  background-color: #151236;
+  padding: 0.5rem;
+  border: none;
+  width: 100%;
+}
+.newCard select:focus {
+  border: none;
+  outline: none;
 }/*# sourceMappingURL=style.css.map */

@@ -1,16 +1,3 @@
-class Cripto {
-  //clase de las critos
-  constructor(logo, name, short, price, marketCap, lastWeek, popularidad) {
-    this.logo = logo;
-    this.name = name;
-    this.short = short;
-    this.price = price;
-    this.marketCap = marketCap;
-    this.lastWeek = lastWeek;
-    this.popularidad = popularidad; //La popularidad es un numero del 1 al 1000 con el que permite realizar el tag de mas populares
-  }
-}
-
 const CritpDatabase = []; //Base de datos de las criptos
 const UICriptos = []; //arreglo con las criptos que se van a mostrar
 

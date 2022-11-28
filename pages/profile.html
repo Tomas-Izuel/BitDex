@@ -78,19 +78,10 @@
       <section class="profileInfo">
         <h1>Administrar tarjetas</h1>
         <div class="cardGalleryTarjetas">
-          <div class="cardTarjeta">
-            <h3>Visa</h3>
-            <p>**** **** **** **89</p>
-            <p>Vencimiento: 07/24</p>
-            <button><ion-icon name="close-circle-outline"></ion-icon></button>
-          </div>
-          <div class="cardTarjeta">
-            <h3>MasterCard</h3>
-            <p>**** **** **** **89</p>
-            <p>Vencimiento: 07/24</p>
-            <button><ion-icon name="close-circle-outline"></ion-icon></button>
-          </div>
         </div>
+        <button class="lightButton submitInfo" id="newCard">
+          Agregar una tarjeta<ion-icon name="add-circle-outline"></ion-icon>
+        </button>
       </section>
     </main>
     <footer></footer>
@@ -102,7 +93,9 @@
       nomodule
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
     ></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../scripts/user.js"></script>
+    <script src="../scripts/clases.js"></script>
     <script type="module" src="../scripts/profile.js"></script>
     <script type="module" src="../scripts/animations.js"></script>
   </body>
