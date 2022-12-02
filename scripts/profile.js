@@ -1,9 +1,15 @@
 import { animationButtonCondition } from "./animations.js";
 
-const profileP = JSON.parse(sessionStorage.getItem("Usuario"));
-if (profileP == null) {
+if (isLogged() === false) {
   //Validacion para que solo se pueda acceder a esta pagina cuando se esta logueado a un perfil
   location.href = "../index.html";
+}
+
+let profileP;
+if (JSON.parse(localStorage.getItem("Usuario")) == null) {
+  profileP = JSON.parse(sessionStorage.getItem("Usuario"));
+} else {
+  profileP = JSON.parse(localStorage.getItem("Usuario"));
 }
 
 const usernameP = document.getElementById("usernameP");
@@ -63,7 +69,9 @@ const mostrarCards = () => {
       cardTarjeta.innerHTML = `<h3>${tarjeta.tipoTarjeta}</h3>
       <p>**** **** **** **${tarjeta.numeroTarjeta.substring(14, 16)}</p>
       <p>Venc: ${tarjeta.vencimiento}</p>
-      <button class="deleteCard" id="deleteCard"><ion-icon name="close-circle-outline"></ion-icon></button>`;
+      <button class="deleteCard" id="${
+        tarjeta.numeroTarjeta
+      }Button"><ion-icon name="close-circle-outline"></ion-icon></button>`;
       cardGalleryTarjetas.append(cardTarjeta);
     });
   } catch {
@@ -175,8 +183,8 @@ newCard.onclick = function (e) {
 mostrarCards();
 
 //Eliminar tarjetas
- const tarjetas = document.querySelectorAll('.deleteCard');
- console.log(tarjetas)
- tarjetas.onclick = function(){
-  alert("a")
- }
+const borrarCard = document.querySelectorAll(".deleteCard");
+console.log(borrarCard);
+borrarCard.onclick = function () {
+  alert("a");
+};

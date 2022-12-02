@@ -1,0 +1,20 @@
+[
+  {
+    "user": "admin",
+    "password": "admin",
+    "email": "admin@example.com",
+    "phone": "11111111",
+    "criptoWallet": [],
+    "creditCards": [],
+    "oid": 1669790505475
+  },
+  {
+    "user": "guest",
+    "password": "guest",
+    "email": "guest@example.com",
+    "phone": "22222222",
+    "criptoWallet": [],
+    "creditCards": [],
+    "oid": 1669929533803
+  }
+]

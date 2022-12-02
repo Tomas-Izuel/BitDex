@@ -6,7 +6,7 @@ class Usuario {
     this.phone = phone;
     this.criptoWallet = [];
     this.creditCards = [];
-    this.oid = Math.round(Math.random() * 100000000000); // Utilizo el patron OID para identificar unequivocamente a los usuarios, no valido que no se repita porque la probababilidad de que esto pase es muy baja
+    this.oid = Date.now(); // Utilizo el patron OID para identificar unequivocamente a los usuarios, no valido que no se repita porque la probababilidad de que esto pase es muy baja
   }
 }
 
@@ -20,7 +20,7 @@ class Cripto {
     this.marketCap = marketCap;
     this.lastWeek = lastWeek;
     this.popularidad = popularidad; //La popularidad es un numero del 1 al 1000 con el que permite realizar el tag de mas populares
-    this.oid = Math.round(Math.random() * 1000000);
+    this.oid = Date.now();
   }
 }
 
