@@ -376,7 +376,7 @@ header {
 .mainCripto {
   width: 100vw;
   min-height: 100vh;
-  background: linear-gradient(127.25deg, #111111 13.67%, #1a1041 44.13%, #330543 91.64%);
+  background-color: rgb(24, 20, 33);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -440,15 +440,12 @@ header {
   border-radius: 2rem;
 }
 .mainCripto .criptoGallery .cripto .nameCripto {
-  width: 15rem;
+  width: 20rem;
   display: flex;
   justify-content: center;
   align-items: center;
   justify-content: flex-start;
   gap: 0.5rem;
-}
-.mainCripto .criptoGallery .cripto .nameCripto img {
-  width: 2rem;
 }
 .mainCripto .criptoGallery .cripto .nameCripto h3 {
   font-size: 1.5rem;
@@ -457,7 +454,7 @@ header {
   color: rgb(184, 184, 184);
 }
 .mainCripto .criptoGallery .cripto .valueCripto {
-  width: 10rem;
+  width: 15rem;
   display: flex;
   justify-content: center;
   align-items: center;

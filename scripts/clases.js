@@ -12,8 +12,7 @@ class Usuario {
 
 class Cripto {
   //clase de las critos
-  constructor(logo, name, short, price, marketCap, lastWeek, popularidad, oid) {
-    this.logo = logo;
+  constructor(name, short, price, marketCap, lastWeek, popularidad, oid) {
     this.name = name;
     this.short = short;
     this.price = price;

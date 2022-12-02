@@ -3,121 +3,38 @@ const UICriptos = []; //arreglo con las criptos que se van a mostrar
 
 const criptoGalleryCards = document.querySelector(".criptoGalleryCards");
 
-//Funcion para cargar criptomonedas a la base de datos, despues sera reemplazada por la solicitud de una API con dichos datos
+//Funcion para cargar criptomonedas a la base de datos
 const loadCriptos = () => {
-  const Bitcoin = new Cripto(
-    "https://bitso.com/_next/static/media/icon-btc.8476d5a9.png",
-    "Bitcoin",
-    "BTC",
-    16897,
-    308024.08,
-    -5.42,
-    1000
-  );
-  CritpDatabase.push(Bitcoin);
-  const Ether = new Cripto(
-    "https://bitso.com/_next/static/media/icon-eth.04884e4c.png",
-    "Ether",
-    "ETH",
-    1207.5,
-    122373.866,
-    -0.07,
-    800
-  );
-  CritpDatabase.push(Ether);
-  const Tir = new Cripto(
-    "https://bitso.com/_next/static/media/icon-axs.b44f29a7.png",
-    "Tir",
-    "TIR",
-    13756,
-    128024.08,
-    +3.32,
-    700
-  )
-  CritpDatabase.push(Tir);
-  const Dai = new Cripto(
-    "https://bitso.com/_next/static/media/icon-dai.1cea5496.png",
-    "Dai",
-    "Dai",
-    10013,
-    136646.987,
-    +0.78,
-    600
-  );
-  CritpDatabase.push(Dai);
-  const Bat = new Cripto(
-    "https://bitso.com/_next/static/media/icon-bat.e458bf1e.png",
-    "Bat",
-    "Bat",
-    0.2286,
-    20196.48,
-    +2.78,
-    35
-  );
-  CritpDatabase.push(Bat);
-  const Cardano = new Cripto(
-    "https://bitso.com/_next/static/media/icon-ada.38cc4408.png",
-    "Cardano",
-    "ADA",
-    0.3283,
-    398976.732,
-    +2.12,
-    30
-  );
-  CritpDatabase.push(Cardano);
-  const Chiliz = new Cripto(
-    "https://bitso.com/_next/static/media/icon-chz.8111664c.png",
-    "Chiliz",
-    "CHZ",
-    0.1893,
-    1236587.369,
-    -0.18,
-    350
-  );
-  CritpDatabase.push(Chiliz);
-  const AaveToken = new Cripto(
-    "https://bitso.com/_next/static/media/icon-aave.ee1779c6.png",
-    "Aave Token",
-    "AAVE",
-    53.040,
-    108286.264,
-    -6.65,
-    600
-  )
-  CritpDatabase.push(AaveToken)
-  const Algorand = new Cripto(
-    "https://bitso.com/_next/static/media/icon-algo.fec1519b.png",
-    "Algorand",
-    "ALGO",
-    0.2334,
-    200034.730,
-    -6.31,
-    200
-  )
-  CritpDatabase.push(Algorand)
-  const ApeCoin = new Cripto(
-    "https://mobileassets.bitso.com/assets/icon/ape.svg",
-    "ApeCoin",
-    "APE",
-    0.2390,
-    435252.362,
-    -3.36,
-    220
-  )
-  CritpDatabase.push(ApeCoin)
-  const DogeCoin = new Cripto(
-    "https://bitso.com/_next/static/media/icon-doge.7b2fba51.png",
-    "DogeCoin",
-    "DOGE",
-    0.998,
-    310296.668,
-    +0.71,
-    610
-  )
-  CritpDatabase.push(DogeCoin)
+  return new Promise((resolve, reject) => {
+    
+    const options = {
+      method: 'GET',
+      headers: {
+        'X-RapidAPI-Key': '932d48a42emshb61aad2523ff54ap1c5e76jsne792ade724b7',
+        'X-RapidAPI-Host': 'coinlore-cryptocurrency.p.rapidapi.com'
+      }
+    };
+    
+    fetch('https://coinlore-cryptocurrency.p.rapidapi.com/api/tickers/?start=0&limit=100', options)
+      .then(response => response.json())
+      .then(response => {
+        for (let i = 0; i < response.data.length; i++) {
+          const cripto = new Cripto(
+            response.data[i].name,
+            response.data[i].symbol,
+            response.data[i].price_usd,
+            response.data[i].market_cap_usd,
+            response.data[i].percent_change_7d,
+            response.data[i].rank
+          )
+          CritpDatabase.push(cripto);
+        }
+        resolve()
+      })
+      .catch(err => console.error(err));
+    
+  })
 };
-
-loadCriptos();
 
 const buildCriptoCard = (cripto) => {
   //Construyo la card de la cripto que luego se va a mostrar
@@ -132,7 +49,6 @@ const buildCriptoCard = (cripto) => {
   const criptoCard = document.createElement("a");
   criptoCard.className = "cripto";
   criptoCard.innerHTML = `<div class="nameCripto">
-          <img src=${cripto.logo} alt="" id="">
           <h3 id="criptoName">${cripto.name} <span id="criptoShort">${cripto.short}</span></h3>
           </div>
           <div class="valueCripto">
@@ -150,7 +66,7 @@ const buildCriptoCard = (cripto) => {
 const showCriptos = (UICriptos) => {
   criptoGalleryCards.innerHTML = "" //Borramos las cards que esten en el DOM
   try { //La funcion del try catch es, que si no quedan mas criptos por mostrar no tire un error
-    for (let index = 0; index < 10; index++) { //Con este for podemos definir cuantos criptos queremos que nos muestre por busqueda
+    for (let index = 0; index < 100; index++) { //Con este for podemos definir cuantos criptos queremos que nos muestre por busqueda
       let criptoCard  = buildCriptoCard(UICriptos[index]); //Llamamos a la funcion para armar nuestra card con el elemento
       criptoGalleryCards.appendChild(criptoCard);
     }
@@ -169,7 +85,7 @@ const loadUICriptos = (button) => {
       break;
     case "top":
       CritpDatabase.forEach((element) => {
-        if (element.popularidad >= 600) {
+        if (element.popularidad < 25) {
           UICriptos.push(element);
         }
       });
@@ -258,4 +174,10 @@ down.onclick = function () {
   searchBar.value = '';
 };
 
-all.click();
+let criptoPromise = loadCriptos();
+Loader.open();
+
+criptoPromise.then(() => { //Muesto las criptos una vez se resuelva el fetch llamando a la api que los provee
+  Loader.close()
+  all.click();
+})
