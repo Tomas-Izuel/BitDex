@@ -31,7 +31,9 @@ const loadCriptos = () => {
         }
         resolve()
       })
-      .catch(err => console.error(err));
+      .catch(err => {
+        reject()
+      });
     
   })
 };
@@ -48,6 +50,7 @@ const buildCriptoCard = (cripto) => {
   //Creo el elemmento y lo retorno armado
   const criptoCard = document.createElement("a");
   criptoCard.className = "cripto";
+  criptoCard.id = cripto.name
   criptoCard.innerHTML = `<div class="nameCripto">
           <h3 id="criptoName">${cripto.name} <span id="criptoShort">${cripto.short}</span></h3>
           </div>
@@ -175,9 +178,21 @@ down.onclick = function () {
 };
 
 let criptoPromise = loadCriptos();
-Loader.open();
+Loader.open(); //Loader para mostrar por pantalla que se estan cargando las criptomonedas
 
 criptoPromise.then(() => { //Muesto las criptos una vez se resuelva el fetch llamando a la api que los provee
   Loader.close()
   all.click();
+}).catch(() => {
+  criptoGalleryCards.innerHTML = '<h2>Error al cargar las criptomonedas</h2>'
 })
+
+
+//Redireccion de criptos
+criptoGalleryCards.addEventListener("click", redireccionarCripto)
+
+function redireccionarCripto(e){
+  const a = event.target.closest('a').id
+  sessionStorage.setItem("currentCripto",JSON.stringify(a))
+  location.href = "../pages/criptoDetails.html"
+}

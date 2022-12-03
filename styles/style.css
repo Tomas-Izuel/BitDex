@@ -261,6 +261,7 @@ header {
   background-size: cover;
   width: 100vw;
   height: 100vh;
+  overflow-y: hidden;
 }
 .mainHome .headlineHome {
   background-color: rgba(0, 0, 0, 0.219);
@@ -281,6 +282,13 @@ header {
   background: -webkit-linear-gradient(90.6deg, #f5ce00 -1.79%, #f40085 37.12%, #d71edb 103.44%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+.mainHome #credits {
+  position: absolute;
+  top: 95%;
+  left: 10%;
+  transform: translate(-50%, -50%);
+  color: rgba(255, 255, 255, 0.664);
 }
 
 .mainLoginRegister {
@@ -606,4 +614,88 @@ header {
 .newCard select:focus {
   border: none;
   outline: none;
+}
+
+.mainCriptoDetails {
+  padding: 10rem;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: rgb(24, 20, 33);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 4rem;
+}
+.mainCriptoDetails .title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mainCriptoDetails .title h1 {
+  font-size: 3.5rem;
+}
+.mainCriptoDetails .criptoDetail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.mainCriptoDetails .formChart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10rem;
+}
+.mainCriptoDetails .formChart form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 1rem;
+  border: 1px solid #2e79b1;
+  width: 30rem;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+.mainCriptoDetails .formChart form .inputBuyCripto {
+  width: 100%;
+  height: 5rem;
+  background-color: white;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.5rem;
+}
+.mainCriptoDetails .formChart form .inputBuyCripto label {
+  color: black;
+  font-size: 1.2rem;
+}
+.mainCriptoDetails .formChart form .inputBuyCripto input {
+  border: none;
+  padding: 0.5rem;
+  color: black;
+  font-size: 1.2rem;
+}
+.mainCriptoDetails .formChart form .inputBuyCripto input:focus {
+  outline: none;
+  border: none;
+}
+.mainCriptoDetails .formChart form .buyButton {
+  width: 100%;
+}
+.mainCriptoDetails .canvas {
+  width: 35rem;
+  height: 25rem;
+}
+.mainCriptoDetails .priceCD {
+  font-size: 2.5rem;
+}
+.mainCriptoDetails .criptoStory {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }/*# sourceMappingURL=style.css.map */
