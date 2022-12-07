@@ -12,36 +12,33 @@ formLogin.addEventListener("submit", (e) => {
 });
 
 const validacionLogin = (user, password, stayLogedValue) => {
-  fetch("../database/users.json") //pido a la base de datos los usuarios
-    .then((response) => response.json())
-    .then((json) => {
-      const db_user = json;
-      let bandera = false;
-      db_user.forEach((Usuario) => {
-        if (Usuario.user == user && Usuario.password == password) {
-          animationButtonCondition(
-            submitLogin,
-            'Inicio de sesion exitoso<ion-icon name="checkmark-done-outline"></ion-icon>',
-            "successButton",
-            3500,
-            "../index.html"
-          );
-          if (stayLogedValue == true) {
-            localStorage.setItem("Usuario", JSON.stringify(Usuario));
-          } else{
-            sessionStorage.setItem("Usuario", JSON.stringify(Usuario));
-          }
-          bandera = true;
-        }
-      });
-      if (bandera == false) {
-        animationButtonCondition(
-          submitLogin,
-          'Credenciales ingresadas incorrectas <ion-icon name="close-circle-outline"></ion-icon>',
-          "failButton",
-          5000,
-          "../pages/login.html"
-        );
+  const db_user = JSON.parse(localStorage.getItem("database"));
+
+  let bandera = false;
+  db_user.forEach((Usuario) => {
+    if (Usuario.user == user && Usuario.password == password) {
+      animationButtonCondition(
+        submitLogin,
+        'Inicio de sesion exitoso<ion-icon name="checkmark-done-outline"></ion-icon>',
+        "successButton",
+        3500,
+        "../index.html"
+      );
+      if (stayLogedValue == true) {
+        localStorage.setItem("Usuario", JSON.stringify(Usuario));
+      } else {
+        sessionStorage.setItem("Usuario", JSON.stringify(Usuario));
       }
-    });
+      bandera = true;
+    }
+  });
+  if (bandera == false) {
+    animationButtonCondition(
+      submitLogin,
+      'Credenciales ingresadas incorrectas <ion-icon name="close-circle-outline"></ion-icon>',
+      "failButton",
+      5000,
+      "../pages/login.html"
+    );
+  }
 };

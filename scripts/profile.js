@@ -1,16 +1,21 @@
 import { animationButtonCondition } from "./animations.js";
 
 if (isLogged() === false) {
-  //Validacion para que solo se pueda acceder a esta pagina cuando se esta logueado a un perfil
+  //Validacion para que solo se pueda acceder a esta pagina cuando se esta logueado a un P
   location.href = "../index.html";
 }
+
+let whereIsLogged;
 
 let profileP;
 if (JSON.parse(localStorage.getItem("Usuario")) == null) {
   profileP = JSON.parse(sessionStorage.getItem("Usuario"));
+  whereIsLogged = "sessionStorage";
 } else {
   profileP = JSON.parse(localStorage.getItem("Usuario"));
+  whereIsLogged = "localStorage";
 }
+
 
 const usernameP = document.getElementById("usernameP");
 const passwordP = document.getElementById("passwordP");
@@ -43,7 +48,12 @@ const editProfile = () => {
         "../pages/profile.html"
       );
       localStorage.setItem("database", JSON.stringify(db_user));
-      sessionStorage.setItem("Usuario", JSON.stringify(Usuario));
+      if (whereIsLogged == "sessionStorage") {
+        sessionStorage.setItem("Usuario", JSON.stringify(Usuario));
+      }
+      if (whereIsLogged == "localStorage") {
+        localStorage.setItem("Usuario", JSON.stringify(Usuario));
+      }
     }
   });
 };
@@ -60,38 +70,45 @@ const cardGalleryTarjetas = document.querySelector(".cardGalleryTarjetas");
 
 const mostrarCards = () => {
   cardGalleryTarjetas.innerHTML = "";
-  const perfil = JSON.parse(sessionStorage.getItem("Usuario"));
-  try {
-    perfil.creditCards.forEach((tarjeta) => {
-      const cardTarjeta = document.createElement("div");
-      cardTarjeta.classList.add("cardTarjeta");
-      cardTarjeta.id = tarjeta.numeroTarjeta;
-      cardTarjeta.innerHTML = `<h3>${tarjeta.tipoTarjeta}</h3>
-      <p>**** **** **** **${tarjeta.numeroTarjeta.substring(14, 16)}</p>
-      <p>Venc: ${tarjeta.vencimiento}</p>
-      <button class="deleteCard" id="${
-        tarjeta.numeroTarjeta
-      }Button"><ion-icon name="close-circle-outline"></ion-icon></button>`;
-      cardGalleryTarjetas.append(cardTarjeta);
-    });
-  } catch {
-    const noCard = document.createElement("div");
-    noCard.innerHTML = "<h3>Parece que no tienes ninguna tarjeta</h3>";
-    cardGalleryTarjetas.append(cardTarjeta);
-  }
+  db_user.forEach((perfil) => {
+    if (perfil.oid === profileP.oid) {
+      try {
+        perfil.creditCards.forEach((tarjeta) => {
+          const cardTarjeta = document.createElement("div");
+          cardTarjeta.classList.add("cardTarjeta");
+          cardTarjeta.id = tarjeta.numeroTarjeta;
+          cardTarjeta.innerHTML = `<h3>${tarjeta.tipoTarjeta}</h3>
+          <p>**** **** **** **${tarjeta.numeroTarjeta.substring(14, 16)}</p>
+          <p>Venc: ${tarjeta.vencimiento}</p>
+          <button class="deleteCard" id="${
+            tarjeta.numeroTarjeta
+          }Button"><ion-icon name="close-circle-outline"></ion-icon></button>`;
+          cardGalleryTarjetas.append(cardTarjeta);
+        });
+      } catch {
+        const noCard = document.createElement("div");
+        noCard.innerHTML = "<h3>Parece que no tienes ninguna tarjeta</h3>";
+      }
+    }
+  });
 };
 
 const agregarTarjetaUsuario = (tajerta) => {
   const db_user = JSON.parse(localStorage.getItem("database"));
-  const perfil = JSON.parse(sessionStorage.getItem("Usuario"));
   db_user.forEach((usuario) => {
-    if (usuario.oid == perfil.oid) {
+    if (usuario.oid == profileP.oid) {
       //agrego la tarjeta al usuario
       try {
         usuario.creditCards.push(tajerta);
-        sessionStorage.clear();
         localStorage.setItem("database", JSON.stringify(db_user));
-        sessionStorage.setItem("Usuario", JSON.stringify(usuario));
+        if (whereIsLogged == "sessionStorage") {
+          sessionStorage.clear();
+          sessionStorage.setItem("Usuario", JSON.stringify(usuario));
+        }
+        if (whereIsLogged == "localStorage") {
+          localStorage.removeItem("Usuario");
+          localStorage.setItem("Usuario", JSON.stringify(usuario))
+        }
         mostrarCards();
       } catch {
         usuario.creditCards = [];
@@ -161,13 +178,15 @@ newCard.onclick = function (e) {
           typeCard,
           dateCard
         );
+        agregarTarjetaUsuario(tajerta);
         Swal.fire({
           title: "Tarjeta registrada con exito",
           icon: "success",
           background: "rgba(0, 0, 0, 0.75)",
           color: "white",
+        }).then((result) => {
+          location.reload();
         });
-        agregarTarjetaUsuario(tajerta);
       } else {
         Swal.fire({
           title: "Los datos ingresados no son correctos",
@@ -184,7 +203,45 @@ mostrarCards();
 
 //Eliminar tarjetas
 const borrarCard = document.querySelectorAll(".deleteCard");
-console.log(borrarCard);
-borrarCard.onclick = function () {
-  alert("a");
-};
+
+borrarCard.forEach((element) => {
+  element.addEventListener("click", deleteCard);
+});
+
+function deleteCard(e) {
+  let cc;
+  const id = event.target.closest("div").id;
+  db_user.forEach((Usuario) => {
+    if (Usuario.oid == profileP.oid) {
+      Usuario.creditCards.forEach((creditCard) => {
+        if (creditCard.numeroTarjeta == id) {
+          cc = creditCard;
+        }
+      });
+
+      Swal.fire({
+        title: "Estas seguro de eliminar esta tarjeta?",
+        text: "No se podra revertir esta decision",
+        icon: "warning",
+        background: "rgba(0, 0, 0, 0.75)",
+        color: "white",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Si, estoy seguro",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Usuario.creditCards.splice(Usuario.creditCards.indexOf(cc), 1);
+          localStorage.setItem("database", JSON.stringify(db_user));
+          Swal.fire({
+            title: "Se ha eliminado el tarjeta",
+            icon: "success",
+            background: "rgba(0, 0, 0, 0.75)",
+            color: "white",
+          });
+          location.reload();
+        }
+      });
+    }
+  });
+}

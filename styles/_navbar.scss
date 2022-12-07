@@ -61,3 +61,7 @@ header {
     display: none;
   }
 }
+
+.disabled {
+  filter: grayscale(80%);
+}

@@ -41,7 +41,7 @@
             </button>
           </li>
           <li>
-            <button class="darkButton"><a href="">Mi wallet</a></button>
+            <button class="darkButton disabled"><a href=""><del>Mi wallet</del></a></button>
           </li>
           <li class="icon">
             <a href="../pages/profile.html"
@@ -77,7 +77,7 @@
               <label for="" id="priceBuy"></label>
             </div>
 
-            <button class="lightButton buyButton" type="submit">
+            <button class="lightButton buyButton" type="submit" id="buyButtonCripto">
               Comprar <ion-icon name="paper-plane-outline"></ion-icon>
             </button>
           </form>
@@ -136,6 +136,7 @@
     <script src="../Librarys/LoaderLibrary/loader.js"></script>
     <script src="../scripts/clases.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="../scripts/criptoDetail.js"></script>
+    <script type="module" src="../scripts/criptoDetail.js"></script>
+    <script type="module" src="../scripts/animations.js"></script>
   </body>
 </html>

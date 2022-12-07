@@ -5,7 +5,7 @@ export function animationButtonCondition(
   lastTime,
   ruta
 ) {
-  submit.innerHTML = "";
+  submit.innerHTML = "‎";
   submit.style.width = "4rem";
   setTimeout(() => {
     submit.classList.remove("lightButton");
