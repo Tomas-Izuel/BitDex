@@ -11,7 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../styles/style.css" />
-    <title>BitDex - Register</title>
+    <title>BitDex - Login</title>
   </head>
   <body>
     <header>
@@ -44,30 +44,26 @@
         </ul>
       </nav>
     </header>
-    <main class="mainLoginRegister register">
-      <form action="" id="formRegister" class="formRegister">
-        <h1>Crea una nueva cuenta en BitDex</h1>
+    <main class="mainLoginRegister login">
+      <form action="" id="formLogin" class="formRegister">
+        <h1>Inicia sesión con tu cuenta de BitDex</h1>
         <div class="input">
           <label for="">Nombre de usuario</label>
-          <input type="text" maxlength="25" id="username" required/>
+          <input type="text" maxlength="25" id="usernameL" required/>
         </div>
         <div class="input">
           <label for="">Contraseña</label>
-          <input type="password" minlength="5" id="password" required/>
+          <input type="password" minlength="5" id="passwordL" required/>
         </div>
-        <div class="input">
-          <label for="">Email</label>
-          <input type="email" id="email" required/>
-        </div>
-        <div class="input">
-          <label for="">Numero de telefono</label>
-          <input type="number" id="phone" maxlength="10" required/>
+        <div class="stayLoged">
+          <label for="">Mantenerme logueado</label>
+          <input type="checkbox" name="" id="stayLogedValue">
         </div>
         <div class="endForm">
-          <button class="lightButton" id="submitRegister">
+          <button class="lightButton" id="submitLogin">
             Registrarse<ion-icon name="navigate-circle-outline"></ion-icon>
           </button>
-          <p>¿Ya tienes una cuenta? <a href="./login.html">Inicia sesión</a></p>
+          <p>¿Aun no tienes cuenta? <a href="./register.html">Registrate</a></p>
         </div>
       </form>
     </main>
@@ -80,8 +76,7 @@
       nomodule
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
     ></script>
-    <script src="../scripts/clases.js"></script>
-    <script type="module" src="../scripts/register.js"></script>
+    <script type="module" src="../scripts/login.js"></script>
     <script type="module" src="../scripts/animations.js"></script>
   </body>
 </html>

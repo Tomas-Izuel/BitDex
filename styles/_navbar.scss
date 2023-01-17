@@ -1,0 +1,67 @@
+header {
+  display: flex;
+  justify-content: center;
+}
+
+.navbar {
+  z-index: 1;
+  transform: translateY(2rem);
+  position: fixed;
+  @include flex;
+  justify-content: space-between;
+  width: 90vw;
+  background-color: #24242481;
+  backdrop-filter: blur(5px);
+  border-radius: 40px;
+  padding: 1rem 2rem;
+  margin: 0 auto;
+  ul {
+    @include flex;
+    gap: 2rem;
+    li > a:hover {
+      color: #2a628f;
+    }
+  }
+  .selected {
+    color: #3e92cc;
+    letter-spacing: 0.2rem;
+  }
+  .brand {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  .brand:hover {
+    letter-spacing: 0.5rem;
+  }
+  .pages {
+    font-size: 1.5rem;
+  }
+  .noProfile {
+    @include flex;
+    gap: 0;
+    ion-icon {
+      font-size: 4rem;
+      background-color: #13293d;
+      border-radius: 10rem;
+    }
+    .darkButton {
+      padding-right: 2rem;
+      border-radius: 2rem 0 0 2rem;
+      transform: translateX(1.8rem);
+    }
+    .logout {
+      margin-right: 1rem;
+      border-radius: 1rem;
+      padding: 0.5rem 1rem;
+      ion-icon {
+        color: red;
+        font-size: 2rem;
+      }
+    }
+    display: none;
+  }
+}
+
+.disabled {
+  filter: grayscale(80%);
+}

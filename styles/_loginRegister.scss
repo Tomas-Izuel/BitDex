@@ -1,0 +1,89 @@
+.mainLoginRegister {
+  padding-top: 10rem;
+  width: 100%;
+  min-height: 100vh;
+  background: radial-gradient(
+    89.89% 89.89% at 48.18% 86.61%,
+    #013c73 0%,
+    #002144 100%
+  );
+  @include flex;
+  justify-content: flex-start;
+}
+
+.formRegister {
+  padding: 3rem 10rem;
+  border-radius: 2rem;
+  background-size: cover;
+  @include flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+  input {
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    padding: 0.5rem;
+  }
+  input:focus {
+    border: none;
+    outline: none;
+  }
+  .input {
+    background-color: #151236;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    width: 100%;
+    @include flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+    label {
+      color: #777777;
+    }
+  }
+  .input:hover {
+    background-color: #1f1c3d;
+  }
+  .endForm{
+    width: 100%;
+    @include flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  button {
+    border-radius: 1rem;
+    width: 100%;
+    height: 4rem;
+  }
+  p {
+    a {
+      color: #3e92cc;
+      border-bottom: 1px solid #3e92cc;
+    }
+  }
+  .stayLoged{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    input[type="checkbox"]{
+      width: 1.5rem;
+      height: 1.5rem;
+      accent-color: none;
+      
+    }
+  }
+}
+
+.register {
+  background-image: url("../media/backgrounLogin.png");
+  background-size: cover;
+}
+
+
+.login{
+  background-image: url("../media/backgrounLogin.png");
+  background-size: cover;
+}

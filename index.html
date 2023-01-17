@@ -1,171 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Fuente-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@200;300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-    <!--Bootstrap-->
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <!--CSS-->
-    <link rel="stylesheet" href="./css/style.css">
-    <!--Icono-->
-    <link rel="icon" href="./media/TCash-logo-3d.png">
-    <!--Animaciones-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <!--SEO-->
-    <meta name="keywords" content="Cripto, Criptomonedas, Blockchain, Bitcoin, Ethereum, Tether, NFT">
-    <meta name="description" content="Compra Bitcoin, NFTs, informate sobre el mundo del Blockchain todo en un mismo lugar con TCash">
-    <title>TCash</title>
-</head>
-
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <title>BitDex - Home</title>
+  </head>
+  <body>
     <header>
-        <nav class="navbar navbar-expand-lg bg-light">
-            <div class="container-fluid">
-                <a class="navbar-brand active" href="./index.html">
-                    <object data="./media/TCashLogo.svg" type=""></object>
-                    <p>TCash</p>
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarText">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="./pages/cripto.html">
-                                <p>Criptos</p>
-                                <ion-icon name="wallet-outline"></ion-icon>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="./pages/nft.html">
-                                <p>NFTs</p>
-                                <ion-icon name="albums-outline"></ion-icon>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="./pages/blog.html">
-                                <p>Blog</p>
-                                <ion-icon name="chatbox-ellipses-outline"></ion-icon>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="./pages/info.html">
-                                <p>Información</p>
-                                <ion-icon name="alert-circle-outline"></ion-icon>
-                            </a>
-                        </li>
-                    </ul>
-                    <span class="navbar-text">
-                        <ul class="navbar-nav">
-                            <li>
-                                <a class="btn btn-secondary" href="./pages/logIn.html" role="button">Iniciar sesión</a>
-                            </li>
-                            <li>
-                                <a class="btn btn-primary" href="./pages/register.html" role="button">Registrarse</a>
-                            </li>
-                            
-                        </ul>
-                    </span>
-                </div>
-            </div>
-        </nav>
+      <nav class="navbar">
+        <a href="" class="brand selected">BitDex</a>
+        <ul class="pages" id="pages">
+          <li><a href="./pages/criptomonedas.html">Criptomonedas</a></li>
+          <li><a href="">Ayuda</a></li>
+        </ul>
+        <ul class="profile" id="profile">
+          <li>
+            <button class="lightButton"><a href="./pages/register.html">Registrarse</a></button>
+          </li>
+          <li>
+            <button class="darkButton"><a href="./pages/login.html">Iniciar sesión</a></button>
+          </li>
+        </ul>
+        <ul class="noProfile" id="noProfile">
+          <li><button class="darkButton logout" id="logout"><ion-icon name="log-out-outline"></ion-icon></button></li>
+          <li>
+            <button class="darkButton disabled"><a href=""><del>Mi wallet</del></a></button>
+          </li>
+          <li class="icon"><a href="./pages/profile.html"><ion-icon name="person-circle-outline"></ion-icon></a></li>
+        </ul>
+      </nav>
     </header>
-    <main class="mainIndex">
-        <div class="header">
-            <!--Titulo-->
-            <div class="inner-header flex">
-                <h1>Compra <span class="moneda m0">Bitcoin</span><span class="moneda m1">Ethereum</span><span class="moneda m2">Tether</span><span class="moneda m3">Solana</span><span class="moneda m4">NFTs</span>
-                </h1>
-                <h1>De la forma mas facil en <span class="tcash">TCash</span></h1>
-            </div>
-            <!--Waves-->
-            <div>
-                <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                    viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-                    <defs>
-                        <path id="gentle-wave"
-                            d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-                    </defs>
-                    <g class="parallax">
-                        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
-                        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
-                        <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
-                        <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
-                    </g>
-                </svg>
-            </div>
-            <!--Waves end-->
-        </div>
-        <div class="content flex">
-        </div>
-        <div class="dataIndex">
-            <h3>+4 Millones de usuarios</h3>
-            <h3>92 Billones de transacciones</h3>
-            <h3>Soporte 24/7</h3>
-        </div>
+    <main class="mainHome">
+      <div class="headlineHome">
+        <p>
+          La plataforma mas rapida y segura para comprar y holdear todas tus
+          <span>Criptomonedas</span>
+        </p>
+        <button class="criptoButton" id="startButton"><a href="">Empieza ya! <ion-icon name="log-in-outline"></ion-icon></a></button>
+      </div>
+      <p id="credits">Producido por Tomas Izuel</p>
     </main>
-    <footer>
-        <div class="credits">
-            <h3>Web credits</h3>
-            <a href="https://github.com/Tomas-Izuel">
-                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-                    y="0px" width="10px" height="10px" viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000"
-                    xml:space="preserve">
-                    <g id="Capa_1">
-                        <path d="M289,287h351c0,0,81,0,81,81h-27c0,0,0.193-54-54-54H316c0,0,0,54,54,54h108c0,0,81,0,81,81v270h-27c0,0-81,0-81-81V503
-            c0,0,0,0,26,0v135c0,0,0,54,56,54V449c0,0-1-54-55-54H370C370,395,289,395,289,287z" />
-                        <rect x="450" y="463" width="27" height="27" />
-                    </g>
-                    <g id="Capa_2">
-                    </g>
-                </svg>
-                <p>©Tomas Izuel - 2022</p>
-            </a>
-        </div>
-        <div class="community">
-            <h3>Community</h3>
-            <div class="communityLogos">
-                <a href="">
-                    <ion-icon name="logo-instagram"></ion-icon>
-                </a>
-                <a href="">
-                    <ion-icon name="logo-linkedin"></ion-icon>
-                </a>
-                <a href="">
-                    <ion-icon name="logo-twitter"></ion-icon>
-                </a>
-                <a href="">
-                    <ion-icon name="logo-github"></ion-icon>
-                </a>
-                <a href="">
-                    <ion-icon name="logo-discord"></ion-icon>
-                </a>
-                <a href="">
-                    <ion-icon name="logo-facebook"></ion-icon>
-                </a>
-                <a href="">
-                    <ion-icon name="logo-reddit"></ion-icon>
-                </a>
-            </div>
-        </div>
-        <div class="license">
-            <h3>License</h3>
-            <p>®TCash Company all rights reserved</p>
-        </div>
-    </footer>
-    <!--Iconos-->
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <!--Bootstrap-->
-    <script src="./javascript/bootstrap.bundle.min.js"></script>
-</body>
-
+    <footer></footer>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="./scripts/user.js"></script>
+    <script src="./scripts/index.js"></script>
+  </body>
 </html>

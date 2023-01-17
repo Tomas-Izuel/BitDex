@@ -1,0 +1,706 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: white;
+  transition: all 0.5s;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: "Raleway", sans-serif;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  overflow-x: hidden;
+}
+
+/*cambio la barra de scroll*/
+body::-webkit-scrollbar {
+  width: 5px;
+}
+
+body::-webkit-scrollbar-track {
+  background: rgba(41, 41, 41, 0.158);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(32, 0, 148);
+  border-radius: 20px;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+button {
+  padding: 1rem;
+}
+
+.darkButton {
+  background-color: #13293d;
+  color: white;
+  border: none;
+  outline: none;
+  font-size: 1.2rem;
+  border-radius: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.darkButton ion-icon {
+  font-size: 2rem;
+}
+.darkButton a {
+  background-color: #13293d;
+  color: white;
+}
+
+.darkButton:hover {
+  background-color: #16324f;
+  color: white;
+  border: none;
+  outline: none;
+  font-size: 1.2rem;
+  border-radius: 2rem;
+  transform: translateY(-0.5rem);
+  box-shadow: #102338 0px 3px, #0c1b2b 0px 6px;
+}
+.darkButton:hover a {
+  background-color: #16324f;
+  color: white;
+}
+
+.lightButton {
+  background-color: #2a628f;
+  color: white;
+  border: none;
+  outline: none;
+  font-size: 1.2rem;
+  border-radius: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.lightButton ion-icon {
+  font-size: 2rem;
+}
+.lightButton a {
+  background-color: #2a628f;
+  color: white;
+}
+
+.lightButton:hover {
+  background-color: #3e92cc;
+  color: white;
+  border: none;
+  outline: none;
+  font-size: 1.2rem;
+  border-radius: 2rem;
+  transform: translateY(-0.5rem);
+  box-shadow: #1f4666 0px 3px, #17334b 0px 6px;
+}
+.lightButton:hover a {
+  background-color: #3e92cc;
+  color: white;
+}
+
+.criptoButton {
+  background: linear-gradient(90.6deg, #f5ce00 -1.79%, #f40085 37.12%, #d71edb 103.44%);
+  color: white;
+  border: none;
+  outline: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border-radius: 2rem;
+  padding: 1.5rem 2rem;
+}
+.criptoButton a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 500;
+  color: white;
+}
+.criptoButton a ion-icon {
+  font-size: 2rem;
+}
+
+.successButton {
+  transition: all 1s;
+  background-color: green;
+  color: white;
+  border: none;
+  outline: none;
+  font-size: 1.2rem;
+  border-radius: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.successButton ion-icon {
+  font-size: 2rem;
+  transform: rotate(-360deg);
+}
+.successButton a {
+  background-color: green;
+  color: white;
+}
+
+.failButton {
+  transition: all 1s;
+  background-color: red;
+  color: white;
+  border: none;
+  outline: none;
+  font-size: 1.2rem;
+  border-radius: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.failButton ion-icon {
+  font-size: 2rem;
+  transform: rotate(-360deg);
+}
+.failButton a {
+  background-color: red;
+  color: white;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+}
+
+.navbar {
+  z-index: 1;
+  transform: translateY(2rem);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  width: 90vw;
+  background-color: rgba(36, 36, 36, 0.5058823529);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  border-radius: 40px;
+  padding: 1rem 2rem;
+  margin: 0 auto;
+}
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.navbar ul li > a:hover {
+  color: #2a628f;
+}
+.navbar .selected {
+  color: #3e92cc;
+  letter-spacing: 0.2rem;
+}
+.navbar .brand {
+  font-size: 2rem;
+  font-weight: 600;
+}
+.navbar .brand:hover {
+  letter-spacing: 0.5rem;
+}
+.navbar .pages {
+  font-size: 1.5rem;
+}
+.navbar .noProfile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  display: none;
+}
+.navbar .noProfile ion-icon {
+  font-size: 4rem;
+  background-color: #13293d;
+  border-radius: 10rem;
+}
+.navbar .noProfile .darkButton {
+  padding-right: 2rem;
+  border-radius: 2rem 0 0 2rem;
+  transform: translateX(1.8rem);
+}
+.navbar .noProfile .logout {
+  margin-right: 1rem;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+}
+.navbar .noProfile .logout ion-icon {
+  color: red;
+  font-size: 2rem;
+}
+
+.disabled {
+  filter: grayscale(80%);
+}
+
+.mainHome {
+  background-image: url("../media/indexBackground.jpg");
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: hidden;
+}
+.mainHome .headlineHome {
+  background-color: rgba(0, 0, 0, 0.219);
+  width: 40rem;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 5rem;
+  font-size: 2rem;
+  gap: 2rem;
+}
+.mainHome .headlineHome span {
+  font-weight: 700;
+  color: 90.6deg, #f5ce00 -1.79%, #f40085 37.12%, #d71edb 103.44%;
+  background: -webkit-linear-gradient(90.6deg, #f5ce00 -1.79%, #f40085 37.12%, #d71edb 103.44%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.mainHome #credits {
+  position: absolute;
+  top: 95%;
+  left: 10%;
+  transform: translate(-50%, -50%);
+  color: rgba(255, 255, 255, 0.664);
+}
+
+.mainLoginRegister {
+  padding-top: 10rem;
+  width: 100%;
+  min-height: 100vh;
+  background: radial-gradient(89.89% 89.89% at 48.18% 86.61%, #013c73 0%, #002144 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.formRegister {
+  padding: 3rem 10rem;
+  border-radius: 2rem;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+}
+.formRegister input {
+  border: none;
+  background-color: transparent;
+  width: 100%;
+  padding: 0.5rem;
+}
+.formRegister input:focus {
+  border: none;
+  outline: none;
+}
+.formRegister .input {
+  background-color: #151236;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+.formRegister .input label {
+  color: #777777;
+}
+.formRegister .input:hover {
+  background-color: #1f1c3d;
+}
+.formRegister .endForm {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.formRegister button {
+  border-radius: 1rem;
+  width: 100%;
+  height: 4rem;
+}
+.formRegister p a {
+  color: #3e92cc;
+  border-bottom: 1px solid #3e92cc;
+}
+.formRegister .stayLoged {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+.formRegister .stayLoged input[type=checkbox] {
+  width: 1.5rem;
+  height: 1.5rem;
+  accent-color: none;
+}
+
+.register {
+  background-image: url("../media/backgrounLogin.png");
+  background-size: cover;
+}
+
+.login {
+  background-image: url("../media/backgrounLogin.png");
+  background-size: cover;
+}
+
+.mainCripto {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: rgb(24, 20, 33);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 13rem 10rem 5rem;
+}
+.mainCripto .searchBar {
+  border: none;
+  padding: 1.5rem;
+  width: 40rem;
+  background-color: #192545;
+  border-radius: 2rem;
+  transition: all 1s;
+  font-size: 1.5rem;
+}
+.mainCripto .searchBar:focus {
+  border: 1px solid #304585;
+  outline: none;
+}
+.mainCripto .tags {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.mainCripto .active {
+  background-color: #304585;
+}
+.mainCripto .active ion-icon {
+  transform: rotate(45deg);
+  color: #e00000;
+}
+.mainCripto .criptoGallery {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.mainCripto .criptoGallery .criptoGalleryCards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  overflow-y: hidden;
+}
+.mainCripto .criptoGallery .cripto {
+  width: 80vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #171D3D;
+  padding: 1rem 1.5rem;
+  border-radius: 2rem;
+}
+.mainCripto .criptoGallery .cripto .nameCripto {
+  width: 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
+.mainCripto .criptoGallery .cripto .nameCripto h3 {
+  font-size: 1.5rem;
+}
+.mainCripto .criptoGallery .cripto .nameCripto h3 span {
+  color: rgb(184, 184, 184);
+}
+.mainCripto .criptoGallery .cripto .valueCripto {
+  width: 15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mainCripto .criptoGallery .cripto .marketCapCripto {
+  width: 12rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mainCripto .criptoGallery .cripto .negative {
+  width: 5.5rem;
+  background-color: #e00000;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mainCripto .criptoGallery .cripto .positive {
+  width: 5.5rem;
+  background-color: green;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mainCripto .criptoGallery .cripto:hover {
+  background-color: #242d5f;
+}
+.mainCripto .criptoGallery .criptoTitles {
+  background-color: transparent;
+}
+.mainCripto .criptoGallery .criptoTitles ion-icon {
+  color: transparent;
+}
+.mainCripto .criptoGallery .criptoTitles:hover {
+  background-color: transparent;
+}
+.mainCripto h2 {
+  margin-top: 2rem;
+}
+
+#btc {
+  background-color: orange;
+  color: black;
+}
+
+#prs {
+  background-color: cyan;
+  color: black;
+}
+
+#ncr {
+  background-color: purple;
+}
+
+#tir {
+  background-color: lightblue;
+  color: black;
+}
+
+.mainProfile {
+  padding: 10rem 0;
+  width: 100vw;
+  min-height: 100vh;
+  background: linear-gradient(25.25deg, #111111 13.67%, #1a1041 44.13%, #330543 91.64%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+.mainProfile .profileInfo {
+  width: 60rem;
+  background-color: rgba(112, 112, 112, 0.068);
+  border-radius: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 3rem 0;
+}
+.mainProfile .profileInfo .profileForm {
+  padding: 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  grid-template-areas: "nameInfo passInfo" "emailInfo phoneInfo" "submitInfo submitInfo";
+}
+.mainProfile .profileInfo .profileForm .input {
+  width: 25rem;
+}
+.mainProfile .profileInfo .profileForm .nameInfo {
+  grid-area: nameInfo;
+}
+.mainProfile .profileInfo .profileForm .passInfo {
+  grid-area: passInfo;
+}
+.mainProfile .profileInfo .profileForm .emailInfo {
+  grid-area: emailInfo;
+}
+.mainProfile .profileInfo .profileForm .phoneInfo {
+  grid-area: phoneInfo;
+}
+.mainProfile .profileInfo .profileForm .submitInfo {
+  grid-area: submitInfo;
+}
+.mainProfile .profileInfo .cardGalleryTarjetas {
+  padding: 2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.mainProfile .profileInfo .cardTarjeta {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #111111;
+  padding: 1rem 1rem 1rem 2rem;
+  width: 45rem;
+  border-radius: 2rem;
+}
+.mainProfile .profileInfo .cardTarjeta button {
+  background-color: transparent;
+  border: none;
+}
+.mainProfile .profileInfo .cardTarjeta button ion-icon {
+  font-size: 2rem;
+  color: red;
+}
+
+.newCard {
+  padding: 0;
+}
+.newCard select {
+  background-color: #151236;
+  padding: 0.5rem;
+  border: none;
+  width: 100%;
+}
+.newCard select:focus {
+  border: none;
+  outline: none;
+}
+
+.mainCriptoDetails {
+  padding: 10rem;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: rgb(24, 20, 33);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 4rem;
+}
+.mainCriptoDetails .title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mainCriptoDetails .title h1 {
+  font-size: 3.5rem;
+}
+.mainCriptoDetails .criptoDetail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.mainCriptoDetails .formChart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10rem;
+}
+.mainCriptoDetails .formChart form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 1rem;
+  border: 1px solid #2e79b1;
+  width: 30rem;
+  height: 20rem;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+.mainCriptoDetails .formChart form .inputBuyCripto {
+  width: 100%;
+  height: 5rem;
+  background-color: white;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.5rem;
+}
+.mainCriptoDetails .formChart form .inputBuyCripto label {
+  color: black;
+  font-size: 1.2rem;
+}
+.mainCriptoDetails .formChart form .inputBuyCripto input {
+  border: none;
+  padding: 0.5rem;
+  color: black;
+  font-size: 1.2rem;
+}
+.mainCriptoDetails .formChart form .inputBuyCripto input:focus {
+  outline: none;
+  border: none;
+}
+.mainCriptoDetails .formChart form .buyButton {
+  width: 100%;
+}
+.mainCriptoDetails .canvas {
+  width: 35rem;
+  height: 25rem;
+}
+.mainCriptoDetails .priceCD {
+  font-size: 2.5rem;
+}
+.mainCriptoDetails .criptoStory {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}/*# sourceMappingURL=style.css.map */

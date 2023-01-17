@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../Librarys/LoaderLibrary/loader.css" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <title>BitDex - Criptomoneda</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <a href="../index.html" class="brand selected">BitDex</a>
+        <ul class="pages" id="pages">
+          <li><a href="./criptomonedas.html" class="">Criptomonedas</a></li>
+          <li><a href="">Ayuda</a></li>
+        </ul>
+        <ul class="profile" id="profile">
+          <li>
+            <button class="lightButton">
+              <a href="../pages/register.html">Registrarse</a>
+            </button>
+          </li>
+          <li>
+            <button class="darkButton">
+              <a href="../pages/login.html">Iniciar sesión</a>
+            </button>
+          </li>
+        </ul>
+        <ul class="noProfile" id="noProfile">
+          <li>
+            <button class="darkButton logout" id="logout">
+              <ion-icon name="log-out-outline"></ion-icon>
+            </button>
+          </li>
+          <li>
+            <button class="darkButton disabled"><a href=""><del>Mi wallet</del></a></button>
+          </li>
+          <li class="icon">
+            <a href="../pages/profile.html"
+              ><ion-icon name="person-circle-outline"></ion-icon
+            ></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="mainCriptoDetails">
+      <div class="title">
+        <h1 id="criptoName"></h1>
+      </div>
+      <section class="critoDetail">
+        <p class="priceCD">
+          Precio actual: $<span id="currentPrice"></span>(USD)
+        </p>
+        <div class="formChart">
+          <canvas
+            class="canvas"
+            id="chartCripto"
+            height="400vh"
+            width="800vw"
+          ></canvas>
+          <form action="">
+            <div class="cantidad inputBuyCripto">
+              <label for="">Comprar:</label>
+              <input type="number" required id="inputBuy"/>
+            </div>
+
+            <div class="precio inputBuyCripto">
+              <label for="">Precio(USD):</label>
+              <label for="" id="priceBuy"></label>
+            </div>
+
+            <button class="lightButton buyButton" type="submit" id="buyButtonCripto">
+              Comprar <ion-icon name="paper-plane-outline"></ion-icon>
+            </button>
+          </form>
+        </div>
+      </section>
+      <section class="criptoStory">
+        <h3>Historia (Es un lorem porque la api no me da esta info)</h3>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium,
+          iusto ea eaque consequatur dolorum labore asperiores facilis officiis
+          saepe sunt ipsum non cupiditate culpa totam nesciunt soluta beatae!
+          Minima, nobis. Explicabo velit a eos cumque aliquam! Quia consequuntur
+          eveniet ut dolor repellat, libero delectus magni explicabo. Modi,
+          inventore. Inventore, eius. Doloribus nulla consequatur placeat
+          impedit provident necessitatibus laborum tempora aperiam!
+          Reprehenderit vel molestiae velit maxime aperiam deleniti rerum aut,
+          placeat est ipsa ex excepturi et. Id odit cupiditate, ab est
+          laboriosam commodi alias explicabo dolor animi rem voluptas, maiores
+          cum. Incidunt sunt commodi voluptates itaque, aperiam perspiciatis
+          iusto aspernatur dolore dolorem culpa fugit debitis suscipit adipisci
+          ullam natus facere laudantium esse nemo tempore. Cum, nostrum hic.
+          Voluptatum ut veniam qui. Cupiditate porro, itaque repudiandae neque
+          blanditiis maxime dolor nihil corporis, nemo deserunt optio enim,
+          vitae sit. Modi quibusdam voluptates soluta quisquam commodi
+          consectetur, quas, blanditiis nihil corporis velit, unde veritatis.
+          Hic, eos? Aspernatur ipsam commodi natus saepe? Ipsam consequatur
+          perspiciatis consectetur tempore quasi! Ullam laudantium, omnis
+          laborum quia sit doloremque! Eveniet sequi neque aut mollitia eaque
+          atque nemo fugiat odio. Voluptatum ipsa nobis, quibusdam repellat
+          eaque harum laboriosam reprehenderit corporis assumenda! Illum ipsa
+          hic iure earum. Cum tempore, ducimus cupiditate quasi, ab reiciendis
+          enim atque fuga ullam, eius eos iure? Aliquid quis voluptatum iusto
+          animi fugit impedit deleniti magni tempora vel placeat, soluta atque
+          error hic quaerat ea veniam repellendus ipsam enim harum? Ipsum veniam
+          natus perferendis velit praesentium hic. Necessitatibus quidem ex
+          magni saepe, quisquam dicta dolorem odit esse! Totam, minima
+          necessitatibus laborum, voluptatum repellat quaerat fugit at, maxime
+          incidunt dolore ullam deleniti dolor! Voluptas voluptatem sapiente
+          commodi amet? Praesentium eos asperiores quidem, neque, maiores quam
+          fugiat fugit impedit beatae tenetur nam culpa ex sed soluta expedita
+          perferendis obcaecati architecto consectetur facere saepe incidunt,
+          reprehenderit a? Facere, commodi dolorum?
+        </p>
+      </section>
+    </main>
+    <footer></footer>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="../scripts/user.js"></script>
+    <script src="../Librarys/LoaderLibrary/loader.js"></script>
+    <script src="../scripts/clases.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="../scripts/criptoDetail.js"></script>
+    <script type="module" src="../scripts/animations.js"></script>
+  </body>
+</html>

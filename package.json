@@ -1,16 +1,19 @@
 {
-  "name": "newproyect",
+  "name": "bitdex",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "scss": "node-sass --watch scss -o css"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "node-sass": "^7.0.1"
-  }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tomas-Izuel/TCash-CoderHouse.git"
+  },
+  "author": "Tomas Izuel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Tomas-Izuel/TCash-CoderHouse/issues"
+  },
+  "homepage": "https://github.com/Tomas-Izuel/TCash-CoderHouse#readme"
 }

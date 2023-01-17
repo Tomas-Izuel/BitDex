@@ -1,0 +1,32 @@
+.mainHome {
+  background-image: url("../media/indexBackground.jpg");
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: hidden;
+  .headlineHome {
+    background-color: rgba(0, 0, 0, 0.219);
+    width: 40rem;
+    height: 100%;
+    @include flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 5rem;
+    font-size: 2rem;
+    gap: 2rem;
+    span {
+        font-weight: 700;
+      color: (90.6deg, #f5ce00 -1.79%, #f40085 37.12%, #d71edb 103.44%);
+      background: -webkit-linear-gradient(90.6deg, #f5ce00 -1.79%, #f40085 37.12%, #d71edb 103.44%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+  #credits {
+    position: absolute;
+    top: 95%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    color: rgba(255, 255, 255, 0.664);
+  }
+}

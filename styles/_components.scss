@@ -1,0 +1,134 @@
+button {
+  padding: 1rem;
+}
+
+.darkButton {
+  background-color: #13293d;
+  color: white;
+  border: none;
+  outline: none;
+  font-size: 1.2rem;
+  border-radius: 2rem;
+  @include flex;
+  gap: 1rem;
+  ion-icon {
+    font-size: 2rem;
+  }
+  a {
+    background-color: #13293d;
+    color: white;
+  }
+}
+
+.darkButton:hover {
+  background-color: #16324f;
+  color: white;
+  border: none;
+  outline: none;
+  font-size: 1.2rem;
+  border-radius: 2rem;
+  a {
+    background-color: #16324f;
+    color: white;
+  }
+  transform: translateY(-0.5rem);
+  box-shadow: #102338 0px 3px, #0c1b2b 0px 6px;
+}
+
+.lightButton {
+  background-color: #2a628f;
+  color: white;
+  border: none;
+  outline: none;
+  font-size: 1.2rem;
+  border-radius: 2rem;
+  @include flex;
+  gap: 1rem;
+  ion-icon {
+    font-size: 2rem;
+  }
+  a {
+    background-color: #2a628f;
+    color: white;
+  }
+}
+
+.lightButton:hover {
+  background-color: #3e92cc;
+  color: white;
+  border: none;
+  outline: none;
+  font-size: 1.2rem;
+  border-radius: 2rem;
+  a {
+    background-color: #3e92cc;
+    color: white;
+  }
+  transform: translateY(-0.5rem);
+  box-shadow: #1f4666 0px 3px, #17334b 0px 6px;
+}
+
+.criptoButton {
+  background: linear-gradient(
+    90.6deg,
+    #f5ce00 -1.79%,
+    #f40085 37.12%,
+    #d71edb 103.44%
+  );
+  color: white;
+  border: none;
+  outline: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border-radius: 2rem;
+  padding: 1.5rem 2rem;
+  a {
+    @include flex;
+    gap: 1rem;
+    font-weight: 500;
+    color: white;
+    ion-icon {
+      font-size: 2rem;
+    }
+  }
+}
+
+.successButton{
+  transition: all 1s;
+  background-color: green;
+  color: white;
+  border: none;
+  outline: none;
+  font-size: 1.2rem;
+  border-radius: 2rem;
+  @include flex;
+  gap: 1rem;
+  ion-icon {
+    font-size: 2rem;
+    transform: rotate(-360deg);
+  }
+  a {
+    background-color: green;
+    color: white;
+  }
+}
+
+.failButton{
+  transition: all 1s;
+  background-color: red;
+  color: white;
+  border: none;
+  outline: none;
+  font-size: 1.2rem;
+  border-radius: 2rem;
+  @include flex;
+  gap: 1rem;
+  ion-icon {
+    font-size: 2rem;
+    transform: rotate(-360deg);
+  }
+  a {
+    background-color: red;
+    color: white;
+  }
+}
